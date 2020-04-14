@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:radiobutton="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             mc:Ignorable="d"
+             x:Class="CarbonHalt.Food"
+             NavigationPage.HasNavigationBar="false">
+    <ScrollView>
+        <Grid RowSpacing="30">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <StackLayout>
+                <Label Text="Food" HorizontalOptions="Start" TranslationX="20" FontSize="30" TextColor="White" TranslationY="15"/>
+                <Label Text="What best describes your diet?" HorizontalOptions="Start" TranslationX="20" FontSize="14" TextColor="White" TranslationY="13"/>
+                <Image Source="journeyMode.png" Aspect="AspectFill" TranslationY="25" ScaleX="0.9"/>
+            </StackLayout>
+            <Frame Grid.Row="1" CornerRadius="40" TranslationY="30">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <radiobutton:SfButton Grid.Row="2" Text="Next" FontSize="22" ImageAlignment="Right" TextColor="DimGray" BackgroundColor="Transparent" BorderWidth="0" Clicked="OnNextClicked"/>
+                </Grid>
+            </Frame>
+        </Grid>
+    </ScrollView>
+</ContentPage>

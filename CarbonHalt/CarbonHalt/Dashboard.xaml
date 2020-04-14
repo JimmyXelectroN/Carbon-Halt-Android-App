@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge.XForms"
+xmlns:radiobutton="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CarbonHalt.Dashboard"
+             NavigationPage.HasNavigationBar="false">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="history.png" />
+    </ContentPage.ToolbarItems>
+
+    <ScrollView>
+        <Grid VerticalOptions="FillAndExpand" RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackLayout Spacing="10">
+                <radiobutton:SfButton Text="" ShowIcon="True" BackgroundImage="history.png" HorizontalOptions="End" HeightRequest="30" WidthRequest="30" TranslationX="-10" TranslationY="5" CornerRadius="10" BackgroundColor="Transparent" BorderColor="Transparent" Clicked="OnHistoryClicked"/>
+                <Label Text="Welcome back," VerticalOptions="Start" HorizontalOptions="Center" FontSize="25" TextColor="White" x:Name="label1" FontFamily="{StaticResource BoldFont}"/>
+                <Label Text="Your current carbon emissions are " HorizontalOptions="Center" FontSize="14" TextColor="White" TranslationY="-10"/>
+                    <gauge:SfCircularGauge TranslationY="-60" Scale="0.8" Opacity="1" x:Name="guage">
+                    <gauge:SfCircularGauge.Headers>
+                        
+                        <gauge:Header Text="0" ForegroundColor="White" TextSize="70" Position="0.5,0.45" x:Name="header1">
+                            <gauge:Header.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String" Android="NuggetMed.tff"/>
+                            </gauge:Header.FontFamily>
+                        </gauge:Header>
+                        
+                        <gauge:Header Text="Kg CO  per week" ForegroundColor="White" TextSize="15" Position="0.5,0.6">
+                            <gauge:Header.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String" Android="NuggetMed.tff"/>
+                            </gauge:Header.FontFamily>
+                        </gauge:Header>
+                        
+                        <gauge:Header Text="2" ForegroundColor="White" TextSize="9" Position="0.465,0.625">
+                            <gauge:Header.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String" Android="NuggetMed.tff"/>
+                            </gauge:Header.FontFamily>
+                        </gauge:Header>
+                        
+                    </gauge:SfCircularGauge.Headers>
+                        <gauge:SfCircularGauge.Scales>
+                            <gauge:Scale StartValue="0" EndValue="400" ShowLabels="False" ShowRim="False" ShowTicks="False" x:Name="scale">
+                                <gauge:Scale.Ranges>
+                                    <gauge:Range StartValue="0" EndValue="400" Thickness="60" x:Name="range">
+                                        <gauge:Range.GradientStops>
+                                            <gauge:GaugeGradientStop Value="0" Color="#30B32D"/>
+                                            <gauge:GaugeGradientStop Value="50" Color="#FFDD00"/>
+                                            <gauge:GaugeGradientStop Value="133" Color="#FF7F27"/>
+                                            <gauge:GaugeGradientStop Value="190" Color="#F03E3E"/>
+                                        </gauge:Range.GradientStops>
+                                    </gauge:Range>
+                                </gauge:Scale.Ranges>
+                                <gauge:Scale.Pointers>
+                                    <gauge:MarkerPointer Value="{Binding Co2}" Offset="0.75" Color="AntiqueWhite" x:Name="marker"/>
+                                </gauge:Scale.Pointers>
+                            </gauge:Scale>
+                        </gauge:SfCircularGauge.Scales>
+                    </gauge:SfCircularGauge>
+                <radiobutton:SfButton Text="Evaluate" BackgroundColor="Transparent" TextColor="White" CornerRadius="40" FontFamily="{StaticResource BoldFont}" HorizontalOptions="Center" WidthRequest="240" TranslationY="-118" HeightRequest="40" FontSize="15" Clicked="OnEvaluateClicked" Opacity="1" BorderWidth="0" BackgroundImage="buttonColor.jpg"/>
+            </StackLayout>
+            <Frame Grid.Row="1" CornerRadius="40" BackgroundColor="#F4F4F4" TranslationY="-88">
+                <StackLayout Spacing="10">
+                    <Frame CornerRadius="20" HasShadow="True" WidthRequest="300" HeightRequest="80" BackgroundColor="#F5F7FA">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="80"/>
+                            </Grid.RowDefinitions>
+                            <Frame CornerRadius="10" HasShadow="True" Padding="0">
+                                <Image Source="toggle.jpg" Aspect="AspectFill"/>
+                            </Frame>
+                            <Label Grid.Column="1" Text="The little things matter. Remember to switch of light sources and appliciances. Any energy saved counts!" 
+                                   FontSize="14" 
+                                   HorizontalOptions="StartAndExpand" 
+                                   TranslationX="6" FontFamily="{StaticResource BoldFont}"/>
+                        </Grid>
+                    </Frame>
+                    <Frame CornerRadius="20" HasShadow="True" WidthRequest="300" HeightRequest="80" BackgroundColor="#F5F7FA">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="80"/>
+                            </Grid.RowDefinitions>
+                            <Frame CornerRadius="10" HasShadow="True" Padding="0">
+                                <Image Source="recycle.png" Aspect="AspectFill"/>
+                            </Frame>
+                            <Label Grid.Column="1" Text="Reduce, Reuse, Recycle. Reduced the amount of waste that you produce goes a long way to reduce carbon dioxide emissions." 
+                                   FontSize="13" 
+                                   HorizontalOptions="StartAndExpand" 
+                                   TranslationX="6" FontFamily="{StaticResource BoldFont}"/>
+                        </Grid>
+                    </Frame>
+                    <Frame CornerRadius="20" HasShadow="True" WidthRequest="300" HeightRequest="80" BackgroundColor="#F5F7FA">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="100"/>
+                            </Grid.RowDefinitions>
+                            <Image Source="background.png" Aspect="AspectFill" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" TranslationX="-25" TranslationY="-10"/>
+                            <Label Grid.Column="1" Text="Turn off the lights us a simple and easy step to reducing your carbon emissions. So just do it!" 
+                                   FontSize="15" 
+                                   HorizontalOptions="StartAndExpand" FontFamily="{StaticResource BoldFont}"/>
+                        </Grid>
+                    </Frame>
+                </StackLayout>
+            </Frame>
+        </Grid>
+    </ScrollView>
+    <!--<ListView x:Name="listView"
+              Margin="20"
+              ItemSelected="OnListViewItemSelected">j
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Frame CornerRadius="20" HasShadow="True">
+                        
+                    </Frame>
+                    <TextCell Text="{Binding Text}"
+                          TextColor="Black"
+                          Detail="{Binding Date}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>-->
+
+</ContentPage>
