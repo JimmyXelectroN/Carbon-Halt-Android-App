@@ -27,27 +27,69 @@ namespace CarbonHalt
         }
 
         async void OnVanClicked(object sender, EventArgs e)
-        { 
-        }
-
-        async void OnSmallCarClicked(object sender, EventArgs e)
         {
+            carType = 1;
+            vanBlur.IsVisible = false;
+            suvBlur.IsVisible = true;
+            sportscarBlur.IsVisible = true;
+            smallcarBlur.IsVisible = true;
+            motorbikeBlur.IsVisible = true;
+            naturalBlur.IsVisible = true;
         }
 
         async void OnSUVClicked(object sender, EventArgs e)
         {
+            carType = 2;
+            vanBlur.IsVisible = true;
+            suvBlur.IsVisible = false;
+            sportscarBlur.IsVisible = true;
+            smallcarBlur.IsVisible = true;
+            motorbikeBlur.IsVisible = true;
+            naturalBlur.IsVisible = true;
         }
 
         async void OnSportscarClicked(object sender, EventArgs e)
         {
+            carType = 3;
+            vanBlur.IsVisible = true;
+            suvBlur.IsVisible = true;
+            sportscarBlur.IsVisible = false;
+            smallcarBlur.IsVisible = true;
+            motorbikeBlur.IsVisible = true;
+            naturalBlur.IsVisible = true;
+        }
+
+        async void OnSmallCarClicked(object sender, EventArgs e)
+        {
+            carType = 4;
+            vanBlur.IsVisible = true;
+            suvBlur.IsVisible = true;
+            sportscarBlur.IsVisible = true;
+            smallcarBlur.IsVisible = false;
+            motorbikeBlur.IsVisible = true;
+            naturalBlur.IsVisible = true;
         }
 
         async void OnMotorcycleClicked(object sender, EventArgs e)
         {
+            carType = 5;
+            vanBlur.IsVisible = true;
+            suvBlur.IsVisible = true;
+            sportscarBlur.IsVisible = true;
+            smallcarBlur.IsVisible = true;
+            motorbikeBlur.IsVisible = false;
+            naturalBlur.IsVisible = true;
         }
 
         async void OnNaturalClicked(object sender, EventArgs e)
         {
+            carType = 6;
+            vanBlur.IsVisible = true;
+            suvBlur.IsVisible = true;
+            sportscarBlur.IsVisible = true;
+            smallcarBlur.IsVisible = true;
+            motorbikeBlur.IsVisible = true;
+            naturalBlur.IsVisible = false;
         }
     }
 }

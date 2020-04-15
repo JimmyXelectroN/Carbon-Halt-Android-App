@@ -7104,6 +7104,9 @@ namespace CarbonHalt.Droid
 			// aapt resource value: 0x7F0700BA
 			public const int van = 2131165370;
 			
+			// aapt resource value: 0x7F0700BB
+			public const int white = 2131165371;
+			
 			static Drawable()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
