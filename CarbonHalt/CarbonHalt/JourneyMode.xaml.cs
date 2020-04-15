@@ -25,5 +25,29 @@ namespace CarbonHalt
             { 
             });
         }
+
+        async void OnVanClicked(object sender, EventArgs e)
+        { 
+        }
+
+        async void OnSmallCarClicked(object sender, EventArgs e)
+        {
+        }
+
+        async void OnSUVClicked(object sender, EventArgs e)
+        {
+        }
+
+        async void OnSportscarClicked(object sender, EventArgs e)
+        {
+        }
+
+        async void OnMotorcycleClicked(object sender, EventArgs e)
+        {
+        }
+
+        async void OnNaturalClicked(object sender, EventArgs e)
+        {
+        }
     }
 }

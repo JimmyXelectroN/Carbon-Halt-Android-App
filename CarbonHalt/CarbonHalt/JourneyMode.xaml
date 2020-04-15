@@ -15,18 +15,29 @@ xmlns:radiobutton="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.B
             </Grid.RowDefinitions>
 
             <StackLayout>
-                <Label Text="Journey Mode" HorizontalOptions="Start" TranslationX="20" FontSize="30" TextColor="White" TranslationY="15"/>
-                <Label Text="What transportation vehicle do you mostly use" HorizontalOptions="Start" TranslationX="20" FontSize="14" TextColor="White" TranslationY="13"/>
+                <Label Text="Journey Mode" HorizontalOptions="Start" TranslationX="20" FontSize="30" TextColor="White" TranslationY="15" FontFamily="{StaticResource BoldFont}"/>
+                <Label Text="What transportation vehicle do you mostly use" HorizontalOptions="Start" TranslationX="20" FontSize="14" TextColor="White" TranslationY="13" FontFamily="{StaticResource BoldFont}"/>
                 <Image Source="journeyMode3.png" Aspect="AspectFill" TranslationY="25" ScaleX="0.9"/>
             </StackLayout>
             <Frame Grid.Row="1" CornerRadius="40" TranslationY="30">
-                <Grid>
+                <Grid RowSpacing="20" ColumnSpacing="30" TranslationX="20" TranslationY="15">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="60"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <radiobutton:SfButton Grid.Row="2" Text="Next" FontSize="22" ImageAlignment="Right" TextColor="DimGray" BackgroundColor="Transparent" BorderWidth="0" Clicked="OnNextClicked"/>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition Width="60"/>
+                    </Grid.ColumnDefinitions>
+                    <radiobutton:SfButton Text="" BackgroundImage="van.jpg" BorderWidth="0" Clicked="OnVanClicked" HeightRequest="100" WidthRequest="100" CornerRadius="18"/>
+                    <radiobutton:SfButton Grid.Column="1" Text="" BackgroundImage="suv.png" BorderWidth="0" Clicked="OnSmallCarClicked" HeightRequest="100" WidthRequest="100" CornerRadius="18"/>
+                    <radiobutton:SfButton Grid.Column="2" Text="" BackgroundImage="sportscar.jpg" BorderWidth="0" Clicked="OnSUVClicked" HeightRequest="100" WidthRequest="100" CornerRadius="18"/>
+                    <radiobutton:SfButton Grid.Row="1" BackgroundImage="smallCar.jpg" BorderWidth="0" Clicked="OnSportscarClicked" HeightRequest="100" WidthRequest="100" CornerRadius="18"/>
+                    <radiobutton:SfButton Grid.Row="1" Grid.Column="1" Text="" BackgroundImage="motorcycle.jpg" BorderWidth="0" Clicked="OnMotorcycleClicked" HeightRequest="100" WidthRequest="100" CornerRadius="18"/>
+                    <radiobutton:SfButton Grid.Row="1" Grid.Column="2" Text="" BackgroundImage="natural.jpg" BorderWidth="0" Clicked="OnNaturalClicked" HeightRequest="100" WidthRequest="100" CornerRadius="18"/>
+                    <radiobutton:SfButton Grid.Row="2" Grid.Column="2" Text="Next" FontSize="22" ImageAlignment="Right" TextColor="DimGray" BackgroundColor="Transparent" BorderWidth="0" Clicked="OnNextClicked" FontFamily="{StaticResource BoldFont}"/>
                 </Grid>
             </Frame>
         </Grid>

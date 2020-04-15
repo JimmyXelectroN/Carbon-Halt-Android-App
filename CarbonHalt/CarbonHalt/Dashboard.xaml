@@ -21,26 +21,26 @@ xmlns:radiobutton="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.B
             </Grid.RowDefinitions>
             <StackLayout Spacing="10">
                 <radiobutton:SfButton Text="" ShowIcon="True" BackgroundImage="history.png" HorizontalOptions="End" HeightRequest="30" WidthRequest="30" TranslationX="-10" TranslationY="5" CornerRadius="10" BackgroundColor="Transparent" BorderColor="Transparent" Clicked="OnHistoryClicked"/>
-                <Label Text="Welcome back," VerticalOptions="Start" HorizontalOptions="Center" FontSize="25" TextColor="White" x:Name="label1" FontFamily="{StaticResource BoldFont}"/>
-                <Label Text="Your current carbon emissions are " HorizontalOptions="Center" FontSize="14" TextColor="White" TranslationY="-10"/>
-                    <gauge:SfCircularGauge TranslationY="-60" Scale="0.8" Opacity="1" x:Name="guage">
+                <Label Text="Welcome back," VerticalOptions="Start" HorizontalOptions="Center" FontSize="28" TextColor="White" x:Name="label1" FontFamily="{StaticResource BoldFont}"/>
+                <Label Text="Your current carbon emissions are " HorizontalOptions="Center" FontSize="16" TextColor="White" TranslationY="-10" FontFamily="{StaticResource BoldFont}"/>
+                    <gauge:SfCircularGauge TranslationY="-60" Scale="0.8" x:Name="guage" Opacity="1">
                     <gauge:SfCircularGauge.Headers>
                         
                         <gauge:Header Text="0" ForegroundColor="White" TextSize="70" Position="0.5,0.45" x:Name="header1">
                             <gauge:Header.FontFamily>
-                                <OnPlatform x:TypeArguments="x:String" Android="NuggetMed.tff"/>
+                                <OnPlatform x:TypeArguments="x:String" Android="NuggetMed.tff#Nugget"/>
                             </gauge:Header.FontFamily>
                         </gauge:Header>
                         
                         <gauge:Header Text="Kg CO  per week" ForegroundColor="White" TextSize="15" Position="0.5,0.6">
                             <gauge:Header.FontFamily>
-                                <OnPlatform x:TypeArguments="x:String" Android="NuggetMed.tff"/>
+                                <OnPlatform x:TypeArguments="x:String" Android="NuggetMed.tff#Nugget"/>
                             </gauge:Header.FontFamily>
                         </gauge:Header>
                         
                         <gauge:Header Text="2" ForegroundColor="White" TextSize="9" Position="0.465,0.625">
                             <gauge:Header.FontFamily>
-                                <OnPlatform x:TypeArguments="x:String" Android="NuggetMed.tff"/>
+                                <OnPlatform x:TypeArguments="x:String" Android="NuggetMed.tff#Nugget"/>
                             </gauge:Header.FontFamily>
                         </gauge:Header>
                         
@@ -63,9 +63,9 @@ xmlns:radiobutton="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.B
                             </gauge:Scale>
                         </gauge:SfCircularGauge.Scales>
                     </gauge:SfCircularGauge>
-                <radiobutton:SfButton Text="Evaluate" BackgroundColor="Transparent" TextColor="White" CornerRadius="40" FontFamily="{StaticResource BoldFont}" HorizontalOptions="Center" WidthRequest="240" TranslationY="-118" HeightRequest="40" FontSize="15" Clicked="OnEvaluateClicked" Opacity="1" BorderWidth="0" BackgroundImage="buttonColor.jpg"/>
+                <radiobutton:SfButton Text="Evaluate" BackgroundColor="Transparent" TextColor="White" CornerRadius="40" FontFamily="{StaticResource BoldFont}" HorizontalOptions="Center" WidthRequest="240" TranslationY="-118" HeightRequest="40" FontSize="16" Clicked="OnEvaluateClicked" Opacity="1" BorderWidth="0" BackgroundImage="buttonColor.jpg"/>
             </StackLayout>
-            <Frame Grid.Row="1" CornerRadius="40" BackgroundColor="#F4F4F4" TranslationY="-88">
+            <Frame Grid.Row="1" CornerRadius="40" TranslationY="-88">
                 <StackLayout Spacing="10">
                     <Frame CornerRadius="20" HasShadow="True" WidthRequest="300" HeightRequest="80" BackgroundColor="#F5F7FA">
                         <Grid>
