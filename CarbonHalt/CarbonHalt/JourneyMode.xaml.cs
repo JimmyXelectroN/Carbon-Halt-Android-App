@@ -21,9 +21,18 @@ namespace CarbonHalt
 
         async void OnNextClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Fuel(carType)
-            { 
-            });
+            if (carType != 6)
+            {
+                await Navigation.PushAsync(new Fuel(carType)
+                {
+                });
+            }
+            else 
+            {
+                await Navigation.PushAsync(new publicTransport(0)
+                {
+                });
+            }
         }
 
         async void OnVanClicked(object sender, EventArgs e)

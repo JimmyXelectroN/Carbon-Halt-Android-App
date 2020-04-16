@@ -32,5 +32,25 @@ namespace CarbonHalt
             {
             });
         }
+
+        async void OnSolarPanelsClicked(object sender, EventArgs e)
+        {
+            solarPanels = !solarPanels;
+        }
+
+        async void OnSolarHeatingClicked(object sender, EventArgs e)
+        {
+            solarHeating = !solarHeating;
+        }
+
+        async void OnHeatPumpClicked(object sender, EventArgs e)
+        {
+            heatPump = !heatPump;
+        }
+
+        async void OnHeatingGridClicked(object sender, EventArgs e)
+        {
+            heatingGrid = !heatingGrid;
+        }
     }
 }

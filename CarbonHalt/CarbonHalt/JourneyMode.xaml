@@ -74,7 +74,7 @@ xmlns:radiobutton="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.B
                     </radiobutton:SfButton>
                     <Label Grid.Row="3" Grid.Column="2" Text="Walk/Bike" FontSize="12" TextColor="DimGray" FontFamily="{StaticResource BoldFont}" TranslationX="8" TranslationY="7"/>
                 </Grid>
-                <Frame CornerRadius="1" BorderColor="#DEDEDE" WidthRequest="600" Padding="18" Margin="-10,-6,-10,-6">
+                <Frame CornerRadius="1" BorderColor="#DEDEDE" WidthRequest="600" Padding="18">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="100"/>

@@ -22,9 +22,34 @@ namespace CarbonHalt
 
         async void OnNextClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new GreenElectricity(foodEmissions + foodEmissions)
+            await Navigation.PushAsync(new GreenElectricity(transportEmissions + foodEmissions)
             {
             });
+        }
+
+        async void OnMeatAllClicked(object sender, EventArgs e) 
+        {
+            foodEmissions = 0;        
+        }
+
+        async void OnMeatSomeClicked(object sender, EventArgs e)
+        {
+            foodEmissions = 0;
+        }
+
+        async void OnNoBeefClicked(object sender, EventArgs e)
+        {
+            foodEmissions = 0;
+        }
+
+        async void OnVegetarianClicked(object sender, EventArgs e)
+        {
+            foodEmissions = 0;
+        }
+
+        async void OnVeganClicked(object sender, EventArgs e)
+        {
+            foodEmissions = 0;
         }
     }
 }

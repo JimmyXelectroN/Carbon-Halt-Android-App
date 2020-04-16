@@ -22,6 +22,7 @@ namespace CarbonHalt
 
         async void OnNextClicked(object sender, EventArgs e)
         {
+            // airTransportation = (continental.Value *0.5) + (intercontinental.Value *0.5)
             await Navigation.PushAsync(new Food(landTransportation + airTransportation)
             {
             });

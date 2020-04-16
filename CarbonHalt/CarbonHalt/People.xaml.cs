@@ -18,7 +18,6 @@ namespace CarbonHalt
         private bool heatingGrid;
         private double utilityEmissions;
         private double houseEmissionsScale;
-        int numOfPeople = 0;
         public People(double _utilityEmissions, double _houseEmissionsScale, bool _solarPanels, bool _solarHeating, bool _heatPump, bool _heatingGrid)
         {
             InitializeComponent();
@@ -32,7 +31,11 @@ namespace CarbonHalt
 
         async void OnNextClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new House(utilityEmissions, houseEmissionsScale, solarPanels, solarHeating, heatPump, heatingGrid, numOfPeople)
+            /*
+            await Navigation.PushAsync(new House(utilityEmissions, houseEmissionsScale, solarPanels, solarHeating, heatPump, heatingGrid, people.Value)
+            {
+            });*/
+            await Navigation.PushAsync(new House(utilityEmissions, houseEmissionsScale, solarPanels, solarHeating, heatPump, heatingGrid, 1)
             {
             });
         }

@@ -12,16 +12,18 @@ namespace CarbonHalt
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class KilometersPerWeek : ContentPage
     {
-        private double fuelEconomy;
-        public KilometersPerWeek(double _fuelEconomy)
+        private double emissionRate;
+        private double km;
+        public KilometersPerWeek(double _emissionRate)
         {
             InitializeComponent();
-            fuelEconomy = _fuelEconomy;
+            emissionRate = _emissionRate;
         }
 
         async void OnNextClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new publicTransport(fuelEconomy)
+            //km = Slider.Value;
+            await Navigation.PushAsync(new publicTransport(emissionRate * km)
             {
             });
         }

@@ -19,7 +19,7 @@
                 <Label Text="How many hours a week do you use public transport" HorizontalOptions="Start" TranslationX="20" FontSize="14" TextColor="White" TranslationY="13"/>
                 <Image Source="journeyMode.png" Aspect="AspectFill" TranslationY="25" ScaleX="0.9"/>
             </StackLayout>
-            <Frame Grid.Row="1" CornerRadius="40" TranslationY="30">
+            <Frame Grid.Row="1" CornerRadius="40" TranslationY="30" >
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="50"/>

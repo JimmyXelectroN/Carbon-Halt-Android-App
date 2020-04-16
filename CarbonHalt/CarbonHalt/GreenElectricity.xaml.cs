@@ -13,7 +13,7 @@ namespace CarbonHalt
     public partial class GreenElectricity : ContentPage
     {
         private double utilityEmissions;
-        private double houseEmissionsScale = 0.05;
+        private double houseEmissionsScale = 1;
         public GreenElectricity(double _utilityEmissions)
         {
             InitializeComponent();
@@ -25,6 +25,16 @@ namespace CarbonHalt
             await Navigation.PushAsync(new RenewableEnergy(utilityEmissions, houseEmissionsScale)
             {
             });
+        }
+
+        async void OnYesClicked(object sender, EventArgs e)
+        {
+            houseEmissionsScale = 0.05;
+        }
+
+        async void OnNoClicked(object sender, EventArgs e)
+        {
+            houseEmissionsScale = 1;
         }
     }
 }

@@ -7,28 +7,44 @@
              mc:Ignorable="d"
              x:Class="CarbonHalt.Fuel"
              NavigationPage.HasNavigationBar="false">
-    <ScrollView>
-        <Grid RowSpacing="30">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
+    <Grid RowSpacing="30">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-            <StackLayout>
-                <Label Text="Fuel Type" HorizontalOptions="Start" TranslationX="20" FontSize="30" TextColor="White" TranslationY="15"/>
-                <Label Text="Which type of fuel do you use?" HorizontalOptions="Start" TranslationX="20" FontSize="14" TextColor="White" TranslationY="13"/>
-                <Image Source="fuel.png" Aspect="AspectFill" TranslationY="25" ScaleX="0.9"/>
+        <StackLayout>
+            <Label Text="Fuel Type" HorizontalOptions="Start" TranslationX="20" FontSize="30" TextColor="White" TranslationY="15" FontFamily="{StaticResource BoldFont}"/>
+            <Label Text="Which type of fuel do you use?" HorizontalOptions="Start" TranslationX="20" FontSize="14" TextColor="White" TranslationY="13" FontFamily="{StaticResource BoldFont}"/>
+            <Image Source="fuel.png" Aspect="AspectFill" TranslationY="25" ScaleX="0.9"/>
+        </StackLayout>
+        <Frame Grid.Row="1" CornerRadius="40" TranslationY="30" Padding="-10">
+            <StackLayout Spacing="0" TranslationY="60">
+                <StackLayout Padding="20" Spacing="15" TranslationY="-20">
+                    <radiobutton:SfButton Text="Diesel" BackgroundColor="Transparent" BorderColor="DimGray" BorderWidth="1" TextColor="DimGray" CornerRadius="20" HeightRequest="50" WidthRequest="300" FontFamily="{StaticResource BoldFont}" Clicked="OnDieselClicked" x:Name="diesel"/>
+                    <radiobutton:SfButton Text="Petrol" BackgroundColor="Transparent" BorderColor="DimGray" BorderWidth="1" TextColor="DimGray" CornerRadius="20" HeightRequest="50" WidthRequest="300" FontFamily="{StaticResource BoldFont}" Clicked="OnPetrolClicked" x:Name="petrol"/>
+                    <radiobutton:SfButton Text="Electricity" BackgroundColor="Transparent" BorderColor="DimGray" BorderWidth="1" TextColor="DimGray" CornerRadius="20" HeightRequest="50" WidthRequest="200" FontFamily="{StaticResource BoldFont}" Clicked="OnElectricityClicked" x:Name="electricity"/>
+                </StackLayout>
+           
+                <Frame CornerRadius="1" BorderColor="#DEDEDE" WidthRequest="600" Padding="18" TranslationY="0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="100"/>
+                        </Grid.ColumnDefinitions>
+
+                        <radiobutton:SfButton Grid.Column="2" BackgroundColor="Transparent" BorderWidth="0" Clicked="OnNextClicked" TranslationX="45" TranslationY="0" ShowIcon="True">
+                            <radiobutton:SfButton.Content>
+                                <StackLayout Orientation="Horizontal" Spacing="2">
+                                    <Label Text="Next" FontSize="20"  TextColor="DimGray" FontFamily="{StaticResource BoldFont}" VerticalOptions="Center"/>
+                                    <Image Source="next.png" HeightRequest="25" WidthRequest="25" VerticalOptions="Center"/>
+                                </StackLayout>
+                            </radiobutton:SfButton.Content>
+                        </radiobutton:SfButton>
+                    </Grid>
+                </Frame>
             </StackLayout>
-            <Frame Grid.Row="1" CornerRadius="40" TranslationY="30">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-                    <radiobutton:SfButton Grid.Row="2" Text="Next" FontSize="22" ImageAlignment="Right" TextColor="DimGray" BackgroundColor="Transparent" BorderWidth="0" Clicked="OnNextClicked"/>
-                </Grid>
-            </Frame>
-        </Grid>
-    </ScrollView>
+        </Frame>
+    </Grid>
 </ContentPage>

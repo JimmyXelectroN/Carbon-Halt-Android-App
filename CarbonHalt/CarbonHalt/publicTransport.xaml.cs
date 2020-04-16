@@ -22,6 +22,8 @@ namespace CarbonHalt
 
         async void OnNextClicked(object sender, EventArgs e)
         {
+            //publicTransportEmissions = (train.Value * 0.5) + (metro.Value * 0.5) + (bus.Value * 0.5);
+
             await Navigation.PushAsync(new AirTransport(privateTransportEmissions + publicTransportEmissions)
             {
             });
