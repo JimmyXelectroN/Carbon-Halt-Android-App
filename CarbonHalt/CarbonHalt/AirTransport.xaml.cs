@@ -12,18 +12,15 @@ namespace CarbonHalt
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AirTransport : ContentPage
     {
-        private double landTransportation;
-        private double airTransportation = 0;
-        public AirTransport(double _landTransportation)
+        public AirTransport()
         {
             InitializeComponent();
-            landTransportation = _landTransportation;
         }
 
         async void OnNextClicked(object sender, EventArgs e)
         {
-            // airTransportation = (continental.Value *0.5) + (intercontinental.Value *0.5)
-            await Navigation.PushAsync(new Food(landTransportation + airTransportation)
+            CO2EmissionCalculator.flightHours = hours.Value;
+            await Navigation.PushAsync(new Food()
             {
             });
         }

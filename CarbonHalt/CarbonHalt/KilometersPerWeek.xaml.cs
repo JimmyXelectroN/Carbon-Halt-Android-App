@@ -1,29 +1,31 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using CarbonHalt.Models;
 
 namespace CarbonHalt
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class KilometersPerWeek : ContentPage
     {
-        private double emissionRate;
         private double km;
-        public KilometersPerWeek(double _emissionRate)
+
+        public KilometersPerWeek()
         {
             InitializeComponent();
-            emissionRate = _emissionRate;
         }
 
         async void OnNextClicked(object sender, EventArgs e)
         {
-            //km = Slider.Value;
-            await Navigation.PushAsync(new publicTransport(emissionRate * km)
+            km = slider.Value;
+            CO2EmissionCalculator.kilometersTravelledPrivate = km;
+            /*
+            await App.Database.SaveEmissionLevelAsync(new emissionLevel
+            {
+                TimeRecorded = DateTime.Now.Date.ToString("MMMM dd"),
+                Co2 = CO2EmissionCalculator.CalculateCO2()
+            });*/
+            await Navigation.PushAsync(new publicTransport()
             {
             });
         }

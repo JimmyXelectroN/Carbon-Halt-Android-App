@@ -21,9 +21,9 @@
         <Frame Grid.Row="1" CornerRadius="40" TranslationY="30" Padding="-10">
             <StackLayout Spacing="0" TranslationY="60">
 
-                <Slider Minimum="0" Maximum="1000"/>
+                <Slider Minimum="0" Maximum="1000" BackgroundColor="DodgerBlue" x:Name="slider"/>
 
-                <Frame CornerRadius="1" BorderColor="#DEDEDE" WidthRequest="600" Padding="18" TranslationY="0">
+                <Frame CornerRadius="1" BorderColor="#DEDEDE" WidthRequest="600" Padding="18" TranslationY="100">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="100"/>
@@ -39,7 +39,7 @@
                                 </StackLayout>
                             </radiobutton:SfButton.Content>
                         </radiobutton:SfButton>
-                    </Grid>
+                    </Grid> 
                 </Frame>
             </StackLayout>
         </Frame>

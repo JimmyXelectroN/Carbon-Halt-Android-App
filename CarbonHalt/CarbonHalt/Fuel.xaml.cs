@@ -12,43 +12,23 @@ namespace CarbonHalt
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Fuel : ContentPage
     {
-        private double emissionRate = 0;
-        private int carType;
-        public Fuel(int _carType)
+        private int fuelType;
+        public Fuel()
         {
             InitializeComponent();
-            carType = _carType;
         }
 
         async void OnNextClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new KilometersPerWeek(emissionRate)
+            CO2EmissionCalculator.fuelType = fuelType;
+            await Navigation.PushAsync(new KilometersPerWeek()
             {
             });
         }
 
         async void OnDieselClicked(object sender, EventArgs e) 
         {
-            if (carType == 1)
-            {
-                emissionRate = 0.158;
-            }
-            else if (carType == 2)
-            {
-                emissionRate = 0.163;
-            }
-            else if (carType == 3)
-            {
-                emissionRate = 0.210;
-            }
-            else if (carType == 4)
-            {
-                emissionRate = 0.119;
-            }
-            else if (carType == 5)
-            {
-                emissionRate = 0.066;
-            }
+            fuelType = 1;
 
             diesel.BackgroundColor = Color.AliceBlue;
             petrol.BackgroundColor = Color.Transparent;
@@ -57,25 +37,7 @@ namespace CarbonHalt
 
         async void OnPetrolClicked(object sender, EventArgs e)
         {
-            if (carType == 1)
-            {
-                emissionRate = 0.263;
-            }
-            else if (carType == 2)
-            {
-                emissionRate = 0.271;
-            }
-            else if (carType == 3)
-            {
-                emissionRate = 0.350;
-            }
-            else if (carType == 4)
-            {
-                emissionRate = 0.198;
-            }
-            else if (carType == 5) {
-                emissionRate = 0.11;
-            }
+            fuelType = 2;
 
             diesel.BackgroundColor = Color.Transparent;
             petrol.BackgroundColor = Color.AliceBlue;
@@ -84,7 +46,7 @@ namespace CarbonHalt
 
         async void OnElectricityClicked(object sender, EventArgs e)
         {
-            emissionRate = 0;
+            fuelType = 3;
             diesel.BackgroundColor = Color.Transparent;
             petrol.BackgroundColor = Color.Transparent;
             electricity.BackgroundColor = Color.AliceBlue;

@@ -12,17 +12,15 @@ namespace CarbonHalt
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Food : ContentPage
     {
-        private double transportEmissions;
         private double foodEmissions = 0;
-        public Food(double _transportEmissions)
+        public Food()
         {
             InitializeComponent();
-            transportEmissions = _transportEmissions;
         }
 
         async void OnNextClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new GreenElectricity(transportEmissions + foodEmissions)
+            await Navigation.PushAsync(new GreenElectricity()
             {
             });
         }

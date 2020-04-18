@@ -12,17 +12,15 @@ namespace CarbonHalt
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class GreenElectricity : ContentPage
     {
-        private double utilityEmissions;
         private double houseEmissionsScale = 1;
-        public GreenElectricity(double _utilityEmissions)
+        public GreenElectricity()
         {
             InitializeComponent();
-            utilityEmissions = _utilityEmissions;
         }
 
         async void OnNextClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new RenewableEnergy(utilityEmissions, houseEmissionsScale)
+            await Navigation.PushAsync(new RenewableEnergy()
             {
             });
         }

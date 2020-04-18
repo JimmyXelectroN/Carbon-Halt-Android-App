@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,7 +8,7 @@ namespace CarbonHalt
 
     public partial class JourneyMode : ContentPage
     {
-        private int carType = 0;
+        private int vehicleType = 0;
         public JourneyMode()
         {
             InitializeComponent();
@@ -21,15 +16,18 @@ namespace CarbonHalt
 
         async void OnNextClicked(object sender, EventArgs e)
         {
-            if (carType != 6)
+            CO2EmissionCalculator.vehicleType = vehicleType;
+            if (vehicleType != 6)
             {
-                await Navigation.PushAsync(new Fuel(carType)
+                await Navigation.PushAsync(new Fuel()
                 {
                 });
             }
             else 
             {
-                await Navigation.PushAsync(new publicTransport(0)
+                CO2EmissionCalculator.fuelType = 3;
+                CO2EmissionCalculator.kilometersTravelledPrivate = 0;
+                await Navigation.PushAsync(new publicTransport()
                 {
                 });
             }
@@ -37,7 +35,7 @@ namespace CarbonHalt
 
         async void OnVanClicked(object sender, EventArgs e)
         {
-            carType = 1;
+            vehicleType = 1;
             vanBlur.IsVisible = false;
             suvBlur.IsVisible = true;
             sportscarBlur.IsVisible = true;
@@ -48,7 +46,7 @@ namespace CarbonHalt
 
         async void OnSUVClicked(object sender, EventArgs e)
         {
-            carType = 2;
+            vehicleType = 2;
             vanBlur.IsVisible = true;
             suvBlur.IsVisible = false;
             sportscarBlur.IsVisible = true;
@@ -59,7 +57,7 @@ namespace CarbonHalt
 
         async void OnSportscarClicked(object sender, EventArgs e)
         {
-            carType = 3;
+            vehicleType = 3;
             vanBlur.IsVisible = true;
             suvBlur.IsVisible = true;
             sportscarBlur.IsVisible = false;
@@ -70,7 +68,7 @@ namespace CarbonHalt
 
         async void OnSmallCarClicked(object sender, EventArgs e)
         {
-            carType = 4;
+            vehicleType = 4;
             vanBlur.IsVisible = true;
             suvBlur.IsVisible = true;
             sportscarBlur.IsVisible = true;
@@ -81,7 +79,7 @@ namespace CarbonHalt
 
         async void OnMotorcycleClicked(object sender, EventArgs e)
         {
-            carType = 5;
+            vehicleType = 5;
             vanBlur.IsVisible = true;
             suvBlur.IsVisible = true;
             sportscarBlur.IsVisible = true;
@@ -92,7 +90,7 @@ namespace CarbonHalt
 
         async void OnNaturalClicked(object sender, EventArgs e)
         {
-            carType = 6;
+            vehicleType = 6;
             vanBlur.IsVisible = true;
             suvBlur.IsVisible = true;
             sportscarBlur.IsVisible = true;
