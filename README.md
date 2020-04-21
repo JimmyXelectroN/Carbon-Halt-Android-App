@@ -13,3 +13,7 @@ Food-Miles and the Relative Climate Impacts of Food Choices in the United States
 Christopher L. Weber and H. Scott Matthews
 Environmental Science & Technology 2008 42 (10), 3508-3513
 DOI: 10.1021/es702969f
+
+## Images
+
+<a href="https://www.freepik.com/free-photos-vectors/food">Food vector created by pch.vector - www.freepik.com</a>
