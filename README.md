@@ -3,20 +3,24 @@ This app helps the user keep track of their carbon footprint. Made using C# and 
 
 ## References
 
-Natural Resources Canada, Fuel Consumption Guide. (2020). Fuel Consumption Guides: Canada, 2020 (Report No.7). Retrieved from https://www.nrcan.gc.ca/sites/www.nrcan.gc.ca/files/oee/pdf/transportation/tools/fuelratings/2020%20Fuel%20Consumption%20Guide.pdf
+Burkart, K. (2017, May 31). How much CO2 does one solar panel create? Retrieved from https://www.mnn.com/green-tech/research-innovations/blogs/how-much-co2-does-one-solar-panel-create
 
 Campbell, I. (2019, January). Carbon Independant. Retrieved from https://www.carbonindependent.org/index.html
 
-Wilson, L. (n.d.). The carbon foodprint of 5 diets compared. Retrieved from http://shrinkthatfootprint.com/food-carbon-footprint-diet
+Defra. (2007). Act on CO2 Calculator: Public Trial Version: Data, Methodology and Assumptions Paper (Vol. 1, pp. 1–35). Victoria Street, London.
+
+Department for Business, Energy and Industrial Strategy (BEIS). (2019). 2019 Government Greenhouse Gas Conversion Factors For Company Reporting Methodology Paper for Emission Factors Final Report (pp. 1–129).
+
+European Environment Agency. (2019, December 10). Average CO2 emissions from new cars and new vans increased in 2018. Retrieved from https://www.eea.europa.eu/highlights/average-co2-emissions-from-new
 
 Food-Miles and the Relative Climate Impacts of Food Choices in the United States
 Christopher L. Weber and H. Scott Matthews
 Environmental Science & Technology 2008 42 (10), 3508-3513
 DOI: 10.1021/es702969f
 
-Defra. (2007). Act on CO2 Calculator: Public Trial Version: Data, Methodology and Assumptions Paper (Vol. 1, pp. 1–35). Victoria Street, London.
+Natural Resources Canada, Fuel Consumption Guide. (2020). Fuel Consumption Guides: Canada, 2020 (Report No.7). Retrieved from https://www.nrcan.gc.ca/sites/www.nrcan.gc.ca/files/oee/pdf/transportation/tools/fuelratings/2020%20Fuel%20Consumption%20Guide.pdf
 
-Department for Business, Energy and Industrial Strategy (BEIS). (2019). 2019 Government Greenhouse Gas Conversion Factors For Company Reporting Methodology Paper for Emission Factors Final Report (pp. 1–129).
+Wilson, L. (n.d.). The carbon foodprint of 5 diets compared. Retrieved from http://shrinkthatfootprint.com/food-carbon-footprint-diet
 
 ### Images
 
