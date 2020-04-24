@@ -1,9 +1,9 @@
 # Carbon Halt Android App
 This app helps the user keep track of their carbon footprint. Made using C# and Xamarin
 
-**(Feel free to contribute to this project as there is lots to improve. Create a branch and add features that you think will be useful. All and any help is welcome and wanted.)**
+**(Feel free to contribute to this project as there is lots to improve. For one if we can get better estimations for the calculator, that would be great. Create a branch and add features that you think will be useful. All and any help is welcome and wanted.)**
 
-## References
+## References (If you make a change that requires citing, do so here)
 
 Burkart, K. (2017, May 31). How much CO2 does one solar panel create? Retrieved from https://www.mnn.com/green-tech/research-innovations/blogs/how-much-co2-does-one-solar-panel-create
 
@@ -24,7 +24,7 @@ Natural Resources Canada, Fuel Consumption Guide. (2020). Fuel Consumption Guide
 
 Wilson, L. (n.d.). The carbon foodprint of 5 diets compared. Retrieved from http://shrinkthatfootprint.com/food-carbon-footprint-diet
 
-### Images and Icons Attribution
+### Images and Icons Attribution (Attribute any image and icon additions)
 
 <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 www.freevector.com
