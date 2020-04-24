@@ -1,6 +1,6 @@
 # Carbon Halt Android App
 This app helps the user keep track of their carbon footprint. Made using C# and Xamarin
-**( Feel free to contribute to this project as there is lots to improve. Create a branch and add features that you think will be useful. All and any help is welcome and wanted.)
+**( Feel free to contribute to this project as there is lots to improve. Create a branch and add features that you think will be useful. All and any help is welcome and wanted.)**
 
 ## References
 
