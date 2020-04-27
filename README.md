@@ -43,4 +43,5 @@ www.freevector.com
 <a href="https://www.freepik.com/free-photos-vectors/design">Design vector created by pch.vector - www.freepik.com</a>
 <a href="https://www.freepik.com/free-photos-vectors/house">House vector created by pch.vector - www.freepik.com</a>
 <a href="https://www.freepik.com/free-photos-vectors/tree">Tree vector created by pch.vector - www.freepik.com</a>
+<a href="https://www.freepik.com/free-photos-vectors/green">Green vector created by freepik - www.freepik.com</a>
 <a href="https://www.vecteezy.com/free-vector/solar-cell">Solar Cell Vectors by Vecteezy</a>
