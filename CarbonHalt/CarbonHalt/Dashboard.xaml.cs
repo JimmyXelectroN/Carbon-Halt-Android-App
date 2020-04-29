@@ -1,42 +1,71 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using CarbonHalt.Models;
+using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using CarbonHalt.Models;
-using Syncfusion.SfGauge.XForms;
-using System.Collections.ObjectModel;
 
 namespace CarbonHalt
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Dashboard : ContentPage
     {
+
         public Dashboard()
         {
+            if (App.Database.hintIsEmpty())
+            {
+                questions();
+            }
+
             InitializeComponent();
+        }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+
+            if (CO2EmissionCalculator.questionsDone) 
+            {
+                carousel.ItemsSource = App.Database.GetHints().Result;
+
+                await App.Database.SaveEmissionLevelAsync(new emissionLevel
+                {
+                    TimeRecorded = DateTime.Now.Date.ToString("MMMM dd"),
+                    Co2 = CO2EmissionCalculator.CalculateCO2()
+                });
+            }
+
+            CO2EmissionCalculator.questionsDone = false;
+
+            carousel.ItemsSource = App.Database.GetHints().Result;
 
             if (App.Database.GetEmissionLevels().Result.LastOrDefault() != null)
             {
                 header1.Text = "" + App.Database.GetEmissionLevels().Result.Last().Co2;
                 marker.Value = App.Database.GetEmissionLevels().Result.Last().Co2;
             }
+
         }
 
-        async void OnEvaluateClicked(object sender, EventArgs e) {
+        protected override bool OnBackButtonPressed()
+        {
+            return true;
+        }
 
-            await Navigation.PushAsync(new JourneyMode()
-            {
-            }); 
+        protected void OnEvaluateClicked(object sender, EventArgs e)
+        {
+            App.Database.ClearHints();
+            questions();
         }
 
         async void OnHistoryClicked(object sender, EventArgs e) {
-            await Navigation.PushAsync(new History()
-            { 
-            });
+            await Navigation.PushAsync(new History());
+        }
+
+
+        async void questions()
+        {
+            await Navigation.PushAsync(new JourneyMode());
         }
     }
 }

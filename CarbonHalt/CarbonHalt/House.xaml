@@ -7,28 +7,89 @@
              mc:Ignorable="d"
              x:Class="CarbonHalt.House" 
              NavigationPage.HasNavigationBar="false">
-    <ScrollView>
-        <Grid RowSpacing="30">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
 
-            <StackLayout>
-                <Label Text="Accomodation" HorizontalOptions="Start" TranslationX="20" FontSize="30" TextColor="White" TranslationY="15"/>
-                <Label Text="What kind of house do you live in?" HorizontalOptions="Start" TranslationX="20" FontSize="14" TextColor="White" TranslationY="13"/>
-                <Image Source="journeyMode.png" Aspect="AspectFill" TranslationY="25" ScaleX="0.9"/>
-            </StackLayout>
-            <Frame Grid.Row="1" CornerRadius="40" TranslationY="30">
-                <Grid>
+    <Grid RowSpacing="30">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="230"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackLayout Padding="20">
+            <Label Text="House" HorizontalOptions="Start" FontSize="30" TextColor="White" FontFamily="{StaticResource SofiaProMedium}"/>
+            <Label Text="What type of residence do you live in?" HorizontalOptions="Start" FontSize="14" TextColor="White" FontFamily="{StaticResource SofiaProMedium}"/>
+        </StackLayout>
+        <Image Grid.Row="1" Source="home.png" Aspect="AspectFit" ScaleX="1"  ScaleY="1"/>
+        <Frame Grid.Row="2" CornerRadius="30" Padding="25">
+            <StackLayout Spacing="-25">
+                <Grid RowSpacing="0" ColumnSpacing="50" HorizontalOptions="Center" VerticalOptions="Center">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="30"/>
                     </Grid.RowDefinitions>
-                    <radiobutton:SfButton Grid.Row="2" Text="Next" FontSize="22" ImageAlignment="Right" TextColor="DimGray" BackgroundColor="Transparent" BorderWidth="0" Clicked="OnNextClicked"/>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="100"/>
+                    </Grid.ColumnDefinitions>
+                    <radiobutton:SfButton BackgroundImage="bigHouse.jpg" BorderWidth="0" Clicked="OnBigHouseClicked" CornerRadius="18" ShowIcon="True">
+                        <radiobutton:SfButton.Content>
+                            <Image Source="white.png" Aspect="AspectFill" IsVisible="True" x:Name="bigHouseBlur"/>
+                        </radiobutton:SfButton.Content>
+                    </radiobutton:SfButton>
+                    <Label Grid.Row="1" Text="Large" FontSize="12" TextColor="DimGray" FontFamily="{StaticResource BoldFont}" HorizontalOptions="Center" VerticalOptions="Center"/>
+
+                    <radiobutton:SfButton Grid.Column="1" BackgroundImage="mediumHouse.png" BorderWidth="0" Clicked="OnMediumClicked" CornerRadius="18" ShowIcon="True">
+                        <radiobutton:SfButton.Content>
+                            <Image Source="white.png" Aspect="AspectFill" IsVisible="True" x:Name="mediumHouseBlur"/>
+                        </radiobutton:SfButton.Content>
+                    </radiobutton:SfButton>
+                    <Label Grid.Row="1" Grid.Column="1" Text="Medium" FontSize="12" TextColor="DimGray" FontFamily="{StaticResource BoldFont}" HorizontalOptions="Center" VerticalOptions="Center"/>
+
+
+                    <radiobutton:SfButton Grid.Row="2" BackgroundImage="smallHouse.png" BorderWidth="0" Clicked="OnSmallClicked" CornerRadius="18" ShowIcon="True">
+                        <radiobutton:SfButton.Content>
+                            <Image Source="white.png" Aspect="AspectFill" IsVisible="True" x:Name="smallHouseBlur"/>
+                        </radiobutton:SfButton.Content>
+                    </radiobutton:SfButton>
+                    <Label Grid.Row="3" Text="Small / Flat" FontSize="12" TextColor="DimGray" FontFamily="{StaticResource BoldFont}" HorizontalOptions="Center" VerticalOptions="Center"/>
+
+                    <radiobutton:SfButton Grid.Row="2" Grid.Column="1" Text="" BackgroundImage="dorm.jpg" BorderWidth="0" Clicked="OnDormClicked" CornerRadius="18" ShowIcon="True">
+                        <radiobutton:SfButton.Content>
+                            <Image Source="white.png" Aspect="AspectFill" IsVisible="True" x:Name="dormBlur"/>
+                        </radiobutton:SfButton.Content>
+                    </radiobutton:SfButton>
+                    <Label Grid.Row="3" Grid.Column="1" Text="Dormitory" FontSize="12" TextColor="DimGray" FontFamily="{StaticResource BoldFont}" HorizontalOptions="Center" VerticalOptions="Center"/>
                 </Grid>
-            </Frame>
-        </Grid>
-    </ScrollView>
+            </StackLayout>
+        </Frame>
+        <Frame Grid.Row="2" BorderColor="#DEDEDE" WidthRequest="600" Padding="14" VerticalOptions="EndAndExpand" Margin="-2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+
+                <radiobutton:SfButton BackgroundColor="Transparent" BorderWidth="0" Clicked="OnBackClicked" ShowIcon="True">
+                    <radiobutton:SfButton.Content>
+                        <StackLayout Orientation="Horizontal" Spacing="2">
+                            <Image Source="back.png" HeightRequest="22" WidthRequest="16" VerticalOptions="End"/>
+                            <Label Text="Back" FontSize="20"  TextColor="DimGray" FontFamily="{StaticResource SofiaProMedium}" VerticalOptions="End"/>
+                        </StackLayout>
+                    </radiobutton:SfButton.Content>
+                </radiobutton:SfButton>
+
+                <radiobutton:SfButton Grid.Column="2" BackgroundColor="Transparent" BorderWidth="0" Clicked="OnNextClicked" ShowIcon="True">
+                    <radiobutton:SfButton.Content>
+                        <StackLayout Orientation="Horizontal" Spacing="2">
+                            <Label Text="Finish" FontSize="20"  TextColor="#D1D1D1" FontFamily="{StaticResource SofiaProMedium}" VerticalOptions="End" x:Name="nextLabel"/>
+                            <Image Source="next2.png" HeightRequest="22" WidthRequest="16" VerticalOptions="End" x:Name="nextIcon"/>
+                        </StackLayout>
+                    </radiobutton:SfButton.Content>
+                </radiobutton:SfButton>
+            </Grid>
+        </Frame>
+    </Grid>
 </ContentPage>

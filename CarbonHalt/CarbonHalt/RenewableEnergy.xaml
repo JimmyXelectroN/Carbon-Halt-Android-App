@@ -7,28 +7,92 @@
              mc:Ignorable="d"
              x:Class="CarbonHalt.RenewableEnergy"
              NavigationPage.HasNavigationBar="false">
-    <ScrollView>
-        <Grid RowSpacing="30">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
 
-            <StackLayout>
-                <Label Text="Renewable Energy" HorizontalOptions="Start" TranslationX="20" FontSize="30" TextColor="White" TranslationY="15"/>
-                <Label Text="Do you have any renewable sources of energy?" HorizontalOptions="Start" TranslationX="20" FontSize="14" TextColor="White" TranslationY="13"/>
-                <Image Source="journeyMode.png" Aspect="AspectFill" TranslationY="25" ScaleX="0.9"/>
-            </StackLayout>
-            <Frame Grid.Row="1" CornerRadius="40" TranslationY="30">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-                    <radiobutton:SfButton Grid.Row="2" Text="Next" FontSize="22" ImageAlignment="Right" TextColor="DimGray" BackgroundColor="Transparent" BorderWidth="0" Clicked="OnNextClicked"/>
-                </Grid>
-            </Frame>
-        </Grid>
-    </ScrollView>
+    <Grid RowSpacing="-10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="280"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackLayout Padding="20">
+            <Label Text="Renewable Energy" HorizontalOptions="Start" FontSize="30" TextColor="White" FontFamily="{StaticResource SofiaProMedium}"/>
+            <Label Text="Does your house use any of these renewable energy sources?" HorizontalOptions="Start" FontSize="14" TextColor="White" FontFamily="{StaticResource SofiaProMedium}"/>
+        </StackLayout>
+        <Image Grid.Row="1" Source="renewable.png" Aspect="AspectFit" Scale="1.2"/>
+        <Frame Grid.Row="2" CornerRadius="30" Padding="24">
+            <Grid RowSpacing="3" ColumnSpacing="65" HorizontalOptions="Center" VerticalOptions="Start">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="78"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="78"/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="78"/>
+                    <ColumnDefinition Width="78"/>
+                </Grid.ColumnDefinitions>
+
+                <!--Solar Button-->
+                <radiobutton:SfButton BorderWidth="1.5" Clicked="OnSolarPanelsClicked" CornerRadius="18" BorderColor="LightGray" x:Name="solarButton" BackgroundColor="Transparent" Padding="12">
+                    <radiobutton:SfButton.Content>
+                        <Image Source="solar.png" Aspect="AspectFit"/>
+                    </radiobutton:SfButton.Content>
+                </radiobutton:SfButton>
+                <Label Grid.Row="1" Text="Solar Panels" FontSize="12" FontFamily="{StaticResource SofiaProMedium}" HorizontalOptions="Center" VerticalOptions="Center"/>
+
+                <!--Solar Heating Button-->
+                <radiobutton:SfButton Grid.Column="1" BorderWidth="1.5" Clicked="OnSolarHeatingClicked" CornerRadius="18" BorderColor="LightGray" x:Name="solarHeatingButton" BackgroundColor="Transparent" Padding="12">
+                    <radiobutton:SfButton.Content>
+                        <Image Source="solarHeating.png" Aspect="AspectFit"/>
+                    </radiobutton:SfButton.Content>
+                </radiobutton:SfButton>
+                <Label Grid.Row="1" Grid.Column="1" Text="Solar Heating Unit" FontSize="12" FontFamily="{StaticResource SofiaProMedium}" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center"/>
+
+                <!--Geothermal Button-->
+                <radiobutton:SfButton Grid.Row="2" BorderWidth="1.5" Clicked="OnHeatPumpClicked" CornerRadius="18" BorderColor="LightGray" x:Name="geoButton" BackgroundColor="Transparent" Padding="12">
+                    <radiobutton:SfButton.Content>
+                        <Image Source="geo.png" Aspect="AspectFit"/>
+                    </radiobutton:SfButton.Content>
+                </radiobutton:SfButton>
+                <Label Grid.Row="3" Text="Geothermal Heating" FontSize="12" FontFamily="{StaticResource SofiaProMedium}" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center"/>
+
+                <!--Wind Car Button-->
+                <radiobutton:SfButton  Grid.Row="2" Grid.Column="1" BorderWidth="1.5" Clicked="OnWindClicked" CornerRadius="18" BorderColor="LightGray" x:Name="windButton" BackgroundColor="Transparent" Padding="12">
+                    <radiobutton:SfButton.Content>
+                        <Image Source="wind.png" Aspect="AspectFit"/>
+                    </radiobutton:SfButton.Content>
+                </radiobutton:SfButton>
+                <Label Grid.Row="3" Grid.Column="1" Text="Wind Energy System" FontSize="12" FontFamily="{StaticResource SofiaProMedium}" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center"/>
+
+            </Grid>
+        </Frame>
+        <Frame Grid.Row="2" BorderColor="#DEDEDE" WidthRequest="600" Padding="14" VerticalOptions="EndAndExpand" Margin="-2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="160"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+
+                <radiobutton:SfButton BackgroundColor="Transparent" BorderWidth="0" Clicked="OnBackClicked" ShowIcon="True">
+                    <radiobutton:SfButton.Content>
+                        <StackLayout Orientation="Horizontal" Spacing="2">
+                            <Image Source="back.png" HeightRequest="22" WidthRequest="16" VerticalOptions="End"/>
+                            <Label Text="Back" FontSize="20"  TextColor="DimGray" FontFamily="{StaticResource SofiaProMedium}" VerticalOptions="End"/>
+                        </StackLayout>
+                    </radiobutton:SfButton.Content>
+                </radiobutton:SfButton>
+
+                <radiobutton:SfButton Grid.Column="2" BackgroundColor="Transparent" BorderWidth="0" Clicked="OnNextClicked" ShowIcon="True">
+                    <radiobutton:SfButton.Content>
+                        <StackLayout Orientation="Horizontal" Spacing="2">
+                            <Label Text="Next" FontSize="20"  TextColor="DimGray" FontFamily="{StaticResource SofiaProMedium}" VerticalOptions="Start"/>
+                            <Image Source="next.png" HeightRequest="22" WidthRequest="16" VerticalOptions="End"/>
+                        </StackLayout>
+                    </radiobutton:SfButton.Content>
+                </radiobutton:SfButton>
+            </Grid>
+        </Frame>
+    </Grid>
 </ContentPage>

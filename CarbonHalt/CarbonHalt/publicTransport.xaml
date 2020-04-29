@@ -7,43 +7,106 @@
              mc:Ignorable="d"
              x:Class="CarbonHalt.publicTransport"
              NavigationPage.HasNavigationBar="false">
-    <Grid RowSpacing="30">
+
+    <Grid RowSpacing="35">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="140"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <StackLayout>
-            <Label Text="Public Transportation" HorizontalOptions="Start" TranslationX="20" FontSize="30" TextColor="White" TranslationY="15" FontFamily="{StaticResource BoldFont}"/>
-            <Label Text="How many kilometers do you ride on with these public transport services?" HorizontalOptions="Start" TranslationX="20" FontSize="14" TextColor="White" TranslationY="13" FontFamily="{StaticResource BoldFont}"/>
-            <Image Source="fuel.png" Aspect="AspectFill" TranslationY="25" ScaleX="0.9"/>
+        <StackLayout Padding="20" Spacing="0">
+            <Label Text="Public Transportation" HorizontalOptions="Start" FontSize="30" TextColor="White" FontFamily="{StaticResource SofiaProMedium}"/>
+            <Label Text="What is your average weekly mileage on each of theses public transport systems?" HorizontalOptions="Start" FontSize="14" TextColor="White" FontFamily="{StaticResource SofiaProMedium}"/>
         </StackLayout>
-        <Frame Grid.Row="1" CornerRadius="40" TranslationY="30" Padding="-10">
-            <StackLayout Spacing="20" TranslationY="60">
+        <Image Grid.Row="1" Source="publicTransport.png" Aspect="AspectFill" ScaleX="0.92" ScaleY="0.75"/>
+        <Frame Grid.Row="2" CornerRadius="30" Padding="0">
+            <StackLayout Padding="30" Spacing="25" Margin="10,0,10,0">
 
-                <Slider Minimum="0" Maximum="10" BackgroundColor="DodgerBlue" x:Name="train"/>
-                <Slider Minimum="0" Maximum="10" BackgroundColor="DodgerBlue" x:Name="metro"/>
-                <Slider Minimum="0" Maximum="10" BackgroundColor="DodgerBlue" x:Name="bus"/>
-
-                <Frame CornerRadius="1" BorderColor="#DEDEDE" WidthRequest="600" Padding="18" TranslationY="100">
+                <StackLayout Spacing="1">
+                    <Label Text="Train" HorizontalOptions="Center" FontSize="18" TextColor="DimGray" FontFamily="{StaticResource SofiaProMedium}"/>
+                    <Slider Minimum="0" Maximum="500" ThumbColor="Blue" x:Name="train" ValueChanged="OnTrainChanged" ScaleY="1.3" ScaleX="1.2" MaximumTrackColor="OrangeRed" MinimumTrackColor="Red"/>
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="100"/>
-                            <ColumnDefinition Width="100"/>
-                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="20"/>
+                            <ColumnDefinition Width="112"/>
+                            <ColumnDefinition Width="98"/>
+                            <ColumnDefinition Width="40"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <Label Text="0" FontSize="12" FontFamily="{StaticResource SofiaProMedium}" TextColor="DimGray" HorizontalTextAlignment="Start"/>
+                        <Label Grid.Column="1" Text="0" FontSize="12" FontFamily="{StaticResource SofiaProMedium}" TextColor="DimGray" x:Name="label" HorizontalTextAlignment="End"/>
+                        <Label Grid.Column="2" Text="km" FontSize="12" FontFamily="{StaticResource SofiaProMedium}" TextColor="DimGray" HorizontalTextAlignment="Start"/>
+                        <Label Grid.Column="3" Text=">500" FontSize="12" FontFamily="{StaticResource SofiaProMedium}" TextColor="DimGray" HorizontalTextAlignment="End"/>
+
+                    </Grid>
+                </StackLayout>
+
+                <StackLayout Spacing="1">
+                    <Label Text="Metro" HorizontalOptions="Center" FontSize="18" TextColor="DimGray" FontFamily="{StaticResource SofiaProMedium}"/>
+                    <Slider Minimum="0" Maximum="500" ThumbColor="Blue" x:Name="metro" ValueChanged="OnMetroChanged" ScaleY="1.3" ScaleX="1.2" MaximumTrackColor="OrangeRed" MinimumTrackColor="Red"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20"/>
+                            <ColumnDefinition Width="112"/>
+                            <ColumnDefinition Width="98"/>
+                            <ColumnDefinition Width="40"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <Label Text="0" FontSize="12" FontFamily="{StaticResource SofiaProMedium}" TextColor="DimGray" HorizontalTextAlignment="Start"/>
+                        <Label Grid.Column="1" Text="0" FontSize="12" FontFamily="{StaticResource SofiaProMedium}" TextColor="DimGray" x:Name="label2" HorizontalTextAlignment="End"/>
+                        <Label Grid.Column="2" Text="km" FontSize="12" FontFamily="{StaticResource SofiaProMedium}" TextColor="DimGray" HorizontalTextAlignment="Start"/>
+                        <Label Grid.Column="3" Text=">500" FontSize="12" FontFamily="{StaticResource SofiaProMedium}" TextColor="DimGray" HorizontalTextAlignment="End"/>
+                    </Grid>
+                </StackLayout>
+
+                <StackLayout Spacing="1">
+                    <Label Text="Bus" HorizontalOptions="Center" FontSize="18" TextColor="DimGray" FontFamily="{StaticResource SofiaProMedium}"/>
+                    <Slider Minimum="0" Maximum="500" ThumbColor="Blue" x:Name="bus" ValueChanged="OnBusChanged" ScaleY="1.3" ScaleX="1.2" MaximumTrackColor="OrangeRed" MinimumTrackColor="Red"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20"/>
+                            <ColumnDefinition Width="112"/>
+                            <ColumnDefinition Width="98"/>
+                            <ColumnDefinition Width="40"/>
                         </Grid.ColumnDefinitions>
 
-                        <radiobutton:SfButton Grid.Column="2" BackgroundColor="Transparent" BorderWidth="0" Clicked="OnNextClicked" TranslationX="45" TranslationY="0" ShowIcon="True">
-                            <radiobutton:SfButton.Content>
-                                <StackLayout Orientation="Horizontal" Spacing="2">
-                                    <Label Text="Next" FontSize="20"  TextColor="DimGray" FontFamily="{StaticResource BoldFont}" VerticalOptions="Center"/>
-                                    <Image Source="next.png" HeightRequest="25" WidthRequest="25" VerticalOptions="Center"/>
-                                </StackLayout>
-                            </radiobutton:SfButton.Content>
-                        </radiobutton:SfButton>
+                        <Label Text="0" FontSize="12" FontFamily="{StaticResource SofiaProMedium}" TextColor="DimGray" HorizontalTextAlignment="Start"/>
+                        <Label Grid.Column="1" Text="0" FontSize="12" FontFamily="{StaticResource SofiaProMedium}" TextColor="DimGray" x:Name="labe3" HorizontalTextAlignment="End"/>
+                        <Label Grid.Column="2" Text="km" FontSize="12" FontFamily="{StaticResource SofiaProMedium}" TextColor="DimGray" HorizontalTextAlignment="Start"/>
+                        <Label Grid.Column="3" Text=">500" FontSize="12" FontFamily="{StaticResource SofiaProMedium}" TextColor="DimGray" HorizontalTextAlignment="End"/>
+
                     </Grid>
-                </Frame>
+                </StackLayout>
+                    
             </StackLayout>
+        </Frame>
+        <Frame Grid.Row="2" BorderColor="#DEDEDE" WidthRequest="600" Padding="14" VerticalOptions="EndAndExpand" Margin="-2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="160"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+
+                <radiobutton:SfButton BackgroundColor="Transparent" BorderWidth="0" Clicked="OnBackClicked" ShowIcon="True">
+                    <radiobutton:SfButton.Content>
+                        <StackLayout Orientation="Horizontal" Spacing="2">
+                            <Image Source="back.png" HeightRequest="22" WidthRequest="16" VerticalOptions="End"/>
+                            <Label Text="Back" FontSize="20"  TextColor="DimGray" FontFamily="{StaticResource SofiaProMedium}" VerticalOptions="End"/>
+                        </StackLayout>
+                    </radiobutton:SfButton.Content>
+                </radiobutton:SfButton>
+
+                <radiobutton:SfButton Grid.Column="2" BackgroundColor="Transparent" BorderWidth="0" Clicked="OnNextClicked" ShowIcon="True">
+                    <radiobutton:SfButton.Content>
+                        <StackLayout Orientation="Horizontal" Spacing="2">
+                            <Label Text="Next" FontSize="20"  TextColor="DimGray" FontFamily="{StaticResource SofiaProMedium}" VerticalOptions="Start"/>
+                            <Image Source="next.png" HeightRequest="22" WidthRequest="16" VerticalOptions="End"/>
+                        </StackLayout>
+                    </radiobutton:SfButton.Content>
+                </radiobutton:SfButton>
+            </Grid>
         </Frame>
     </Grid>
 </ContentPage>

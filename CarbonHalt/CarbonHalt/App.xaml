@@ -22,11 +22,34 @@
                ApplyToDerivedTypes="True">
             <Setter Property="BackgroundImageSource"
                     Value="blue.jpg" />
-
         </Style>
 
         <OnPlatform x:TypeArguments="x:String" x:Key="BoldFont">
             <On Platform="Android" Value="NuggetMed.ttf#Nugget" />
+        </OnPlatform>
+
+        <OnPlatform x:TypeArguments="x:String" x:Key="SofiaProBlack">
+            <On Platform="Android" Value="SofiaProBlack.ttf#SofiaPro" />
+        </OnPlatform>
+
+        <OnPlatform x:TypeArguments="x:String" x:Key="SofiaProBold">
+            <On Platform="Android" Value="SofiaProBold.ttf#SofiaPro" />
+        </OnPlatform>
+
+        <OnPlatform x:TypeArguments="x:String" x:Key="SofiaProExtraLight">
+            <On Platform="Android" Value="SofiaProExtraLight.ttf#SofiaPro" />
+        </OnPlatform>
+
+        <OnPlatform x:TypeArguments="x:String" x:Key="SofiaProLight">
+            <On Platform="Android" Value="SofiaProLight.ttf#SofiaPro" />
+        </OnPlatform>
+
+        <OnPlatform x:TypeArguments="x:String" x:Key="SofiaProUL">
+            <On Platform="Android" Value="SofiaProUltraLight.ttf#SofiaPro" />
+        </OnPlatform>
+
+        <OnPlatform x:TypeArguments="x:String" x:Key="SofiaProMedium">
+            <On Platform="Android" Value="SofiaProMedium.ttf#SofiaPro" />
         </OnPlatform>
 
     </Application.Resources>

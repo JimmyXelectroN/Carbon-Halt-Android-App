@@ -13,12 +13,38 @@ namespace CarbonHalt
         {
             _database = new SQLiteAsyncConnection(dbPath);
             _database.CreateTableAsync<emissionLevel>().Wait();
+            _database.CreateTableAsync<hint>().Wait();
 
         }
 
         public Task<List<emissionLevel>> GetEmissionLevels()
         {
             return _database.Table<emissionLevel>().ToListAsync();
+        }
+
+        public Task<List<hint>> GetHints() 
+        {
+            return _database.Table<hint>().ToListAsync();
+        }
+
+        public void ClearHints()
+        {
+            _database.ExecuteAsync("DELETE FROM hint");
+        }
+
+        public Task<int> SaveHintAsync(hint h) 
+        {
+            return _database.InsertAsync(h);
+        }
+
+        public bool hintIsEmpty() {
+            if (_database.Table<hint>().FirstOrDefaultAsync().Result == null) {
+                return true;
+            }
+            else 
+            {
+                return false;
+            }
         }
 
         public Task<int> SaveEmissionLevelAsync(emissionLevel el)
@@ -30,16 +56,6 @@ namespace CarbonHalt
             }
             else {
                 return _database.InsertAsync(el);
-                /*
-                if (!(_database.Table<emissionLevel>().FirstOrDefaultAsync().Result.TimeRecorded.Equals(el.TimeRecorded)
-               && _database.Table<emissionLevel>().FirstOrDefaultAsync().Result.Co2 == el.Co2))
-                {
-                    return _database.InsertAsync(el);
-                }
-                else
-                {
-                    return _database.InsertAsync(el);
-                }*/
             }
         }
 

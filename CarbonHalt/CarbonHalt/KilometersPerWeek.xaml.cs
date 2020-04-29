@@ -8,26 +8,34 @@ namespace CarbonHalt
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class KilometersPerWeek : ContentPage
     {
-        private double km;
 
         public KilometersPerWeek()
         {
             InitializeComponent();
+            slider.Value = CO2EmissionCalculator.kilometersTravelledPrivate;
         }
 
         async void OnNextClicked(object sender, EventArgs e)
         {
-            km = slider.Value;
-            CO2EmissionCalculator.kilometersTravelledPrivate = km;
-            /*
-            await App.Database.SaveEmissionLevelAsync(new emissionLevel
-            {
-                TimeRecorded = DateTime.Now.Date.ToString("MMMM dd"),
-                Co2 = CO2EmissionCalculator.CalculateCO2()
-            });*/
-            await Navigation.PushAsync(new publicTransport()
-            {
-            });
+            CO2EmissionCalculator.kilometersTravelledPrivate = slider.Value;
+
+            await Navigation.PushAsync(new publicTransport());
+        }
+
+        async void OnBackClicked(object sender, EventArgs e)
+        {
+            CO2EmissionCalculator.kilometersTravelledPrivate = slider.Value;
+            await Navigation.PopAsync();
+        }
+
+        protected override bool OnBackButtonPressed()
+        {
+            return true;
+        }
+
+        async void OnValueChanged(object sender, EventArgs e) 
+        {
+            label.Text = "" + slider.Value;
         }
     }
 }

@@ -7,28 +7,50 @@ xmlns:radiobutton="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.B
              mc:Ignorable="d"
              x:Class="CarbonHalt.GreenElectricity"
              NavigationPage.HasNavigationBar="false">
-    <ScrollView>
-        <Grid RowSpacing="30">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
+    <Grid RowSpacing="30">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="280"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-            <StackLayout>
-                <Label Text="Green Electricty" HorizontalOptions="Start" TranslationX="20" FontSize="30" TextColor="White" TranslationY="15"/>
-                <Label Text="Do you use green electricity?" HorizontalOptions="Start" TranslationX="20" FontSize="14" TextColor="White" TranslationY="13"/>
-                <Image Source="journeyMode.png" Aspect="AspectFill" TranslationY="25" ScaleX="0.9"/>
+        <StackLayout Padding="20" Spacing="-2">
+            <Label Text="Green Electricity" HorizontalOptions="Start" FontSize="30" TextColor="White" FontFamily="{StaticResource SofiaProMedium}"/>
+            <Label Text="Do you have a green tariff?" HorizontalOptions="Start" FontSize="14" TextColor="White" FontFamily="{StaticResource SofiaProMedium}"/>
+        </StackLayout>
+        <Image Grid.Row="1" Source="green.png" Aspect="AspectFit"/>
+        <Frame Grid.Row="2" CornerRadius="30" Padding="16">
+            <StackLayout Padding="20" Spacing="15">
+                <radiobutton:SfButton Text="Yes" BackgroundColor="Transparent" BorderColor="DimGray" BorderWidth="1" TextColor="DimGray" CornerRadius="20" HeightRequest="50" WidthRequest="300" FontFamily="{StaticResource SofiaProMedium}" Clicked="OnYesClicked" x:Name="yes"/>
+                <radiobutton:SfButton Text="No" BackgroundColor="Transparent" BorderColor="DimGray" BorderWidth="1" TextColor="DimGray" CornerRadius="20" HeightRequest="50" WidthRequest="300" FontFamily="{StaticResource SofiaProMedium}" Clicked="OnNoClicked" x:Name="no"/>
             </StackLayout>
-            <Frame Grid.Row="1" CornerRadius="40" TranslationY="30">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-                    <radiobutton:SfButton Grid.Row="2" Text="Next" FontSize="22" ImageAlignment="Right" TextColor="DimGray" BackgroundColor="Transparent" BorderWidth="0" Clicked="OnNextClicked"/>
-                </Grid>
-            </Frame>
-        </Grid>
-    </ScrollView>
+        </Frame>
+        <Frame Grid.Row="2" BorderColor="#DEDEDE" WidthRequest="600" Padding="14" VerticalOptions="EndAndExpand" Margin="-2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="160"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+
+                <radiobutton:SfButton BackgroundColor="Transparent" BorderWidth="0" Clicked="OnBackClicked" ShowIcon="True">
+                    <radiobutton:SfButton.Content>
+                        <StackLayout Orientation="Horizontal" Spacing="2">
+                            <Image Source="back.png" HeightRequest="22" WidthRequest="16" VerticalOptions="End"/>
+                            <Label Text="Back" FontSize="20"  TextColor="DimGray" FontFamily="{StaticResource SofiaProMedium}" VerticalOptions="End"/>
+                        </StackLayout>
+                    </radiobutton:SfButton.Content>
+                </radiobutton:SfButton>
+
+                <radiobutton:SfButton Grid.Column="2" BackgroundColor="Transparent" BorderWidth="0" Clicked="OnNextClicked" ShowIcon="True">
+                    <radiobutton:SfButton.Content>
+                        <StackLayout Orientation="Horizontal" Spacing="2">
+                            <Label Text="Next" FontSize="20"  TextColor="#D1D1D1" FontFamily="{StaticResource SofiaProMedium}" VerticalOptions="End" x:Name="nextLabel"/>
+                            <Image Source="next2.png" HeightRequest="22" WidthRequest="16" VerticalOptions="End" x:Name="nextIcon"/>
+                        </StackLayout>
+                    </radiobutton:SfButton.Content>
+                </radiobutton:SfButton>
+            </Grid>
+        </Frame>
+    </Grid>
 </ContentPage>

@@ -1,8 +1,5 @@
 ﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using System.Collections;
-using SQLite;
-using Android.Arch.Lifecycle;
 using System.Collections.Generic;
 using CarbonHalt.Models;
 using System;
@@ -16,7 +13,6 @@ namespace CarbonHalt
         public History()
         {
             InitializeComponent();
-            //(BindingContext as ViewModel).Data = App.Database.GetEmissionLevels();
         }
 
         protected override async void OnAppearing()
@@ -40,6 +36,16 @@ namespace CarbonHalt
             }
 
             isRowEven = !isRowEven;
+        }
+
+        async void OnDashboardClicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
+        }
+
+        protected override bool OnBackButtonPressed()
+        {
+            return true;
         }
 
     }

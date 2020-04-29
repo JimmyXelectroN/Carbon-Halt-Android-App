@@ -7,41 +7,66 @@
              mc:Ignorable="d"
              x:Class="CarbonHalt.AirTransport"
              NavigationPage.HasNavigationBar="false">
+
     <Grid RowSpacing="30">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="280"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <StackLayout>
-            <Label Text="Hours flown" HorizontalOptions="Start" TranslationX="20" FontSize="30" TextColor="White" TranslationY="15" FontFamily="{StaticResource BoldFont}"/>
-            <Label Text="On average, how many hours do you fly in a year" HorizontalOptions="Start" TranslationX="20" FontSize="14" TextColor="White" TranslationY="13" FontFamily="{StaticResource BoldFont}"/>
-            <Image Source="fuel.png" Aspect="AspectFill" TranslationY="25" ScaleX="0.9"/>
+        <StackLayout Padding="20" Spacing="0">
+            <Label Text="Air Travel" HorizontalOptions="Start" FontSize="30" TextColor="White" FontFamily="{StaticResource SofiaProMedium}"/>
+            <Label Text="How many hours have you spent flying in a commercial airplane this year?" HorizontalOptions="Start" FontSize="14" TextColor="White" FontFamily="{StaticResource SofiaProMedium}"/>
         </StackLayout>
-        <Frame Grid.Row="1" CornerRadius="40" TranslationY="30" Padding="-10">
-            <StackLayout Spacing="0" TranslationY="60">
+        <Image Grid.Row="1" Source="air.png" Aspect="AspectFit" Scale="0.95" HorizontalOptions="Center"/>
+        <Frame Grid.Row="2" CornerRadius="30" Padding="30">
+            <StackLayout Padding="20" Spacing="35">
+                <Slider Minimum="0" Maximum="100" ThumbColor="Blue" x:Name="hours" ValueChanged="OnValueChanged" ScaleY="1.3" ScaleX="1.2" MaximumTrackColor="OrangeRed" MinimumTrackColor="Red"/>
 
-                <Slider Minimum="0" Maximum="100" BackgroundColor="DodgerBlue" x:Name="hours"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="90"/>
+                        <ColumnDefinition Width="40"/>
+                    </Grid.ColumnDefinitions>
 
-                <Frame CornerRadius="1" BorderColor="#DEDEDE" WidthRequest="600" Padding="18" TranslationY="100">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="100"/>
-                            <ColumnDefinition Width="100"/>
-                            <ColumnDefinition Width="100"/>
-                        </Grid.ColumnDefinitions>
+                    <Label Text="0" FontSize="16" FontFamily="{StaticResource SofiaProMedium}" TextColor="DimGray" HorizontalTextAlignment="Start"/>
+                    <Label Grid.Column="1" Text="0" FontSize="20" FontFamily="{StaticResource SofiaProMedium}" TextColor="DimGray" x:Name="label" HorizontalTextAlignment="End"/>
+                    <Label Grid.Column="2" Text="hrs" FontSize="20" FontFamily="{StaticResource SofiaProMedium}" TextColor="DimGray" HorizontalTextAlignment="Start"/>
+                    <Label Grid.Column="3" Text=">200" FontSize="16" FontFamily="{StaticResource SofiaProMedium}" TextColor="DimGray" HorizontalTextAlignment="End"/>
 
-                        <radiobutton:SfButton Grid.Column="2" BackgroundColor="Transparent" BorderWidth="0" Clicked="OnNextClicked" TranslationX="45" TranslationY="0" ShowIcon="True">
-                            <radiobutton:SfButton.Content>
-                                <StackLayout Orientation="Horizontal" Spacing="2">
-                                    <Label Text="Next" FontSize="20"  TextColor="DimGray" FontFamily="{StaticResource BoldFont}" VerticalOptions="Center"/>
-                                    <Image Source="next.png" HeightRequest="25" WidthRequest="25" VerticalOptions="Center"/>
-                                </StackLayout>
-                            </radiobutton:SfButton.Content>
-                        </radiobutton:SfButton>
-                    </Grid>
-                </Frame>
+                </Grid>
             </StackLayout>
         </Frame>
+        <Frame Grid.Row="2" BorderColor="#DEDEDE" WidthRequest="600" Padding="14" VerticalOptions="EndAndExpand" Margin="-2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="160"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+
+                <radiobutton:SfButton BackgroundColor="Transparent" BorderWidth="0" Clicked="OnBackClicked" ShowIcon="True">
+                    <radiobutton:SfButton.Content>
+                        <StackLayout Orientation="Horizontal" Spacing="2">
+                            <Image Source="back.png" HeightRequest="22" WidthRequest="16" VerticalOptions="End"/>
+                            <Label Text="Back" FontSize="20"  TextColor="DimGray" FontFamily="{StaticResource SofiaProMedium}" VerticalOptions="End"/>
+                        </StackLayout>
+                    </radiobutton:SfButton.Content>
+                </radiobutton:SfButton>
+
+                <radiobutton:SfButton Grid.Column="2" BackgroundColor="Transparent" BorderWidth="0" Clicked="OnNextClicked" ShowIcon="True">
+                    <radiobutton:SfButton.Content>
+                        <StackLayout Orientation="Horizontal" Spacing="2">
+                            <Label Text="Next" FontSize="20"  TextColor="DimGray" FontFamily="{StaticResource SofiaProMedium}" VerticalOptions="Start"/>
+                            <Image Source="next.png" HeightRequest="22" WidthRequest="16" VerticalOptions="End"/>
+                        </StackLayout>
+                    </radiobutton:SfButton.Content>
+                </radiobutton:SfButton>
+            </Grid>
+        </Frame>
     </Grid>
+
 </ContentPage>
