@@ -17,9 +17,9 @@ xmlns:radiobutton="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.B
 
         <StackLayout Spacing="10" Padding="20">
             <StackLayout Spacing="-4">
-                <radiobutton:SfButton Text="" ShowIcon="True" BackgroundImage="history.png" HorizontalOptions="End" HeightRequest="30" WidthRequest="30" CornerRadius="10" BackgroundColor="Transparent" BorderColor="Transparent" Clicked="OnHistoryClicked" x:Name="history"/>
+                <radiobutton:SfButton ShowIcon="True" BackgroundImage="history.png" HorizontalOptions="End" HeightRequest="30" WidthRequest="30" CornerRadius="10" BackgroundColor="Transparent" BorderColor="Transparent" Clicked="OnHistoryClicked" x:Name="history"/>
                 <Label Text="Welcome back," VerticalOptions="Start" HorizontalOptions="Center" FontSize="23" TextColor="White" x:Name="label1" FontFamily="{StaticResource SofiaProMedium}"/>
-                <Label Text="Your current carbon emissions are " HorizontalOptions="Center" FontSize="14" TextColor="White" FontFamily="{StaticResource SofiaProMedium}" x:Name="label2"/>
+                <Label Text="Your carbon footprint is" HorizontalOptions="Center" FontSize="14" TextColor="White" FontFamily="{StaticResource SofiaProMedium}" x:Name="label2"/>
             </StackLayout>
             <gauge:SfCircularGauge TranslationY="-60" Scale="0.85" x:Name="guage" Opacity="1">
                 <gauge:SfCircularGauge.Headers>
@@ -37,42 +37,50 @@ xmlns:radiobutton="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.B
                             <gauge:Range StartValue="0" EndValue="400" Thickness="60" x:Name="range">
                                 <gauge:Range.GradientStops>
                                     <gauge:GaugeGradientStop Value="0" Color="#FFFFFF"/>
-                                    <gauge:GaugeGradientStop Value="50" Color="#87A3DC"/> 
+                                    <gauge:GaugeGradientStop Value="50" Color="#87A3DC"/>
                                     <gauge:GaugeGradientStop Value="143" Color="#6586CA"/>
                                     <gauge:GaugeGradientStop Value="250" Color="#29498A"/>
                                 </gauge:Range.GradientStops>
                             </gauge:Range>
                         </gauge:Scale.Ranges>
                         <gauge:Scale.Pointers>
-                            <!--<gauge:MarkerPointer Value="{Binding Co2}" Offset="0.75" Color="AntiqueWhite" x:Name="marker"/>-->
                             <gauge:MarkerPointer Value="{Binding Co2}" Offset="0.73" x:Name="marker" MarkerShape="Circle" Color="White" MarkerWidth="18" MarkerHeight="18" />
                         </gauge:Scale.Pointers>
                     </gauge:Scale>
                 </gauge:SfCircularGauge.Scales>
             </gauge:SfCircularGauge>
-            <radiobutton:SfButton Text="Evaluate" BackgroundColor="Transparent" TextColor="White" CornerRadius="15" FontFamily="{StaticResource SofiaProMedium}" HorizontalOptions="Center" WidthRequest="260" HeightRequest="35" FontSize="17" Clicked="OnEvaluateClicked" Opacity="1" BorderWidth="0" BackgroundImage="buttonColor.jpg" TranslationY="-130" Padding="5"/>
+            <radiobutton:SfButton Text="Evaluate" BackgroundColor="Transparent" TextColor="White" CornerRadius="15" 
+                                  FontFamily="{StaticResource SofiaProMedium}" HorizontalOptions="Center" 
+                                  WidthRequest="260" HeightRequest="35" 
+                                  FontSize="17" 
+                                  Clicked="OnEvaluateClicked" BackgroundImage="buttonColor.jpg" 
+                                  TranslationY="-130" Padding="5" x:Name="buttonX"/>
         </StackLayout>
 
-        <CarouselView Grid.Row="1" x:Name="carousel" HorizontalScrollBarVisibility="Always" PeekAreaInsets="20">
+        <Frame Grid.Row="1" CornerRadius="25" Margin="50,20,50,20" BackgroundColor="Black" Padding="30" Opacity="0.3" x:Name="noHintMessgae" VerticalOptions="Center" HorizontalOptions="Center" IsVisible="False">
+            <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                <Label Text="No Hints Left" FontSize="23" HorizontalTextAlignment="Center" TextColor="LightGray" FontFamily="{StaticResource SofiaProLight}"/>
+                <Label Text="Click the evaluate button to recalculate and get more hints on how to reduce your carbon footprint!" FontSize="20" HorizontalTextAlignment="Center" TextColor="LightGray" FontFamily="{StaticResource SofiaProLight}"/>
+            </StackLayout>
+        </Frame>
+
+        <CarouselView Grid.Row="1" x:Name="carousel" HorizontalScrollBarVisibility="Always" PeekAreaInsets="30">
             <CarouselView.ItemTemplate>
                 <DataTemplate>
                     <StackLayout>
-                        <Frame CornerRadius="14" HasShadow="True" Margin="10" HeightRequest="210" BackgroundColor="White">
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="100"/>
-                                    <ColumnDefinition Width="Auto"/>
-                                </Grid.ColumnDefinitions>
+                        <Frame CornerRadius="25" HasShadow="True" Margin="12" HeightRequest="250" BackgroundColor="White" Padding="0" >
+                            <Grid Padding="12" RowSpacing="0">
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="20"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
+                                
+                                <radiobutton:SfCheckBox HorizontalOptions="Center" x:Name="checkBox" IsChecked="False" CornerRadius="20" ControlSize="25" TickColor="Black" BackgroundColor="Transparent" CheckedColor="Transparent" BorderWidth="1.5"  StateChanged="OnHintCheckClicked" Margin="0,0,0,-2"/>
 
-                                <Image Source="hint.png" Aspect="AspectFill" HorizontalOptions="Start" VerticalOptions="Start" Scale="1.7"/>
-                                <Frame Grid.Row="1" CornerRadius="10" HasShadow="True" Padding="0">
-                                    <Image Source="{Binding Image}" Aspect="AspectFill"/>
-                                </Frame>
-                                <Label Grid.Column="1" Grid.Row="1" Text="{Binding Hint}" FontSize="16" HorizontalOptions="StartAndExpand" TranslationX="6" FontFamily="{StaticResource SofiaProLight}"/>
+                                <Label Grid.Row="1" Text="{Binding Hint}"  FontSize="14" HorizontalOptions="StartAndExpand" FontFamily="{StaticResource SofiaProLight}" HorizontalTextAlignment="Center"/>
+                                
+                                <Image Grid.Row="2" Source="air.png" Aspect="AspectFit" VerticalOptions="End"/>
                             </Grid>
                         </Frame>
                     </StackLayout>

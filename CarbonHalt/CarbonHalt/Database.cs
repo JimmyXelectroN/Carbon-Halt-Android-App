@@ -47,6 +47,11 @@ namespace CarbonHalt
             }
         }
 
+        
+        public void RemoveHintAsync(hint h) {
+            _database.Table<hint>().DeleteAsync(i => i.Hint.Equals(h.Hint));
+        }
+
         public Task<int> SaveEmissionLevelAsync(emissionLevel el)
         {
 

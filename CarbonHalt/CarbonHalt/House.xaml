@@ -68,7 +68,7 @@
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="100"/>
-                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="130"/>
                     <ColumnDefinition Width="100"/>
                 </Grid.ColumnDefinitions>
 
@@ -81,14 +81,8 @@
                     </radiobutton:SfButton.Content>
                 </radiobutton:SfButton>
 
-                <radiobutton:SfButton Grid.Column="2" BackgroundColor="Transparent" BorderWidth="0" Clicked="OnNextClicked" ShowIcon="True">
-                    <radiobutton:SfButton.Content>
-                        <StackLayout Orientation="Horizontal" Spacing="2">
-                            <Label Text="Finish" FontSize="20"  TextColor="#D1D1D1" FontFamily="{StaticResource SofiaProMedium}" VerticalOptions="End" x:Name="nextLabel"/>
-                            <Image Source="next2.png" HeightRequest="22" WidthRequest="16" VerticalOptions="End" x:Name="nextIcon"/>
-                        </StackLayout>
-                    </radiobutton:SfButton.Content>
-                </radiobutton:SfButton>
+                <radiobutton:SfButton Grid.Column="2" BackgroundColor="Transparent" BorderWidth="0" ShowIcon="True" ImageSource="finish.png" x:Name="finish" Clicked="OnFinishClicked" ImageAlignment="End"/>
+               
             </Grid>
         </Frame>
     </Grid>

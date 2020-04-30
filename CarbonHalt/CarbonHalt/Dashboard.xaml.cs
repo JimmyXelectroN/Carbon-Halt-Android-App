@@ -3,6 +3,8 @@ using System;
 using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Syncfusion;
+using Syncfusion.XForms.Buttons;
 
 namespace CarbonHalt
 {
@@ -14,30 +16,31 @@ namespace CarbonHalt
         {
             if (App.Database.hintIsEmpty())
             {
-                questions();
+                questions(true);
             }
 
             InitializeComponent();
+
+            carousel.ItemsSource = App.Database.GetHints().Result;
         }
 
         protected override async void OnAppearing()
         {
             base.OnAppearing();
 
-            if (CO2EmissionCalculator.questionsDone) 
+            if (CO2EmissionCalculator.questionsDone)
             {
-                carousel.ItemsSource = App.Database.GetHints().Result;
 
                 await App.Database.SaveEmissionLevelAsync(new emissionLevel
                 {
                     TimeRecorded = DateTime.Now.Date.ToString("MMMM dd"),
                     Co2 = CO2EmissionCalculator.CalculateCO2()
                 });
+
+                carousel.ItemsSource = App.Database.GetHints().Result;
             }
 
             CO2EmissionCalculator.questionsDone = false;
-
-            carousel.ItemsSource = App.Database.GetHints().Result;
 
             if (App.Database.GetEmissionLevels().Result.LastOrDefault() != null)
             {
@@ -54,18 +57,32 @@ namespace CarbonHalt
 
         protected void OnEvaluateClicked(object sender, EventArgs e)
         {
-            App.Database.ClearHints();
-            questions();
+            questions(false);
         }
 
-        async void OnHistoryClicked(object sender, EventArgs e) {
+        async void OnHistoryClicked(object sender, EventArgs e)
+        {
             await Navigation.PushAsync(new History());
         }
 
 
-        async void questions()
+        async void questions(bool firstSurvey)
         {
-            await Navigation.PushAsync(new JourneyMode());
+            await Navigation.PushAsync(new JourneyMode(firstSurvey));
+        }
+
+        
+        protected void OnHintCheckClicked(object sender, EventArgs e)
+        {
+            if (App.Database.hintIsEmpty())
+            {
+                noHintMessgae.IsVisible = true;
+            }
+
+            App.Database.RemoveHintAsync((hint) carousel.CurrentItem);
+            carousel.ItemsSource = App.Database.GetHints().Result;
+            var checkButton = (SfCheckBox)sender;
+            checkButton.IsChecked = false;
         }
     }
 }

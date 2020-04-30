@@ -19,7 +19,7 @@ xmlns:radiobutton="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.B
             <Label Text="Do you have a green tariff?" HorizontalOptions="Start" FontSize="14" TextColor="White" FontFamily="{StaticResource SofiaProMedium}"/>
         </StackLayout>
         <Image Grid.Row="1" Source="green.png" Aspect="AspectFit"/>
-        <Frame Grid.Row="2" CornerRadius="30" Padding="16">
+        <Frame Grid.Row="2" CornerRadius="30" Padding="16" Margin="0,5,0,0">
             <StackLayout Padding="20" Spacing="15">
                 <radiobutton:SfButton Text="Yes" BackgroundColor="Transparent" BorderColor="DimGray" BorderWidth="1" TextColor="DimGray" CornerRadius="20" HeightRequest="50" WidthRequest="300" FontFamily="{StaticResource SofiaProMedium}" Clicked="OnYesClicked" x:Name="yes"/>
                 <radiobutton:SfButton Text="No" BackgroundColor="Transparent" BorderColor="DimGray" BorderWidth="1" TextColor="DimGray" CornerRadius="20" HeightRequest="50" WidthRequest="300" FontFamily="{StaticResource SofiaProMedium}" Clicked="OnNoClicked" x:Name="no"/>

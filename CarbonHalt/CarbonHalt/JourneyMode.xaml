@@ -83,13 +83,15 @@ xmlns:radiobutton="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.B
                 </Grid>
             </StackLayout>
         </Frame>
-        <Frame Grid.Row="2" BorderColor="#DEDEDE" WidthRequest="600" Padding="14" VerticalOptions="EndAndExpand" Margin="-2">
+        <Frame  Grid.Row="2" BorderColor="#DEDEDE" WidthRequest="600" Padding="14" VerticalOptions="EndAndExpand" Margin="-2">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="100"/>
                     <ColumnDefinition Width="160"/>
                     <ColumnDefinition Width="100"/>
                 </Grid.ColumnDefinitions>
+
+                <radiobutton:SfButton BackgroundColor="Transparent" BorderWidth="0" ShowIcon="True" ImageSource="exit.png" x:Name="exit" Clicked="OnExitClicked"/>
 
                 <radiobutton:SfButton Grid.Column="2" BackgroundColor="Transparent" BorderWidth="0" Clicked="OnNextClicked" ShowIcon="True">
                     <radiobutton:SfButton.Content>

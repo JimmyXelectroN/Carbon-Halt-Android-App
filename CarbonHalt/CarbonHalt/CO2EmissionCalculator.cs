@@ -437,29 +437,11 @@ namespace CarbonHalt
                 });
             }
 
-            if (!solarHeatng)
+            if (!solarHeatng || !geoSystem)
             {
                 await App.Database.SaveHintAsync(new hint
                 {
                     Hint = "Heating counts up to about 78% of your home electricity usage. So its no suprise that switching to a renewable source for your water and general heat will greatly slash your carbon footprint.",
-                    Image = "toggle.jpg"
-                });
-            }
-
-            if (!geoSystem)
-            {
-                await App.Database.SaveHintAsync(new hint
-                {
-                    Hint = "Heating counts up to about 78% of your home electricity usage. So its no suprise that switching to a renewable source for your water and general heat will greatly slash your carbon footprint.",
-                    Image = "toggle.jpg"
-                });
-            }
-
-            if (!solar)
-            {
-                await App.Database.SaveHintAsync(new hint
-                {
-                    Hint = "Installing and powering your hous via solar panels will directly reduce your carbon footprint by over 85%. Following this up with a tesla battery can help you go completely off the grid",
                     Image = "toggle.jpg"
                 });
             }

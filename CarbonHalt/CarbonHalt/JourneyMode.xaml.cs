@@ -9,11 +9,18 @@ namespace CarbonHalt
     public partial class JourneyMode : ContentPage
     {
         private int vehicleType;
-        public JourneyMode()
+        private bool firstSurvey;
+        public JourneyMode(bool _firstSurvey)
         {
-
+            firstSurvey = _firstSurvey;
             InitializeComponent();
             vehicleType = CO2EmissionCalculator.vehicleType;
+            if (firstSurvey) 
+            {
+                exit.IsEnabled = false;
+                exit.ShowIcon = false;
+            }
+
             if (vehicleType == 1)
             {
                 nextLabel.TextColor = Color.DimGray;
@@ -106,6 +113,11 @@ namespace CarbonHalt
                     await Navigation.PushAsync(new publicTransport());
                 }
             }
+        }
+
+        async void OnExitClicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
         }
 
         protected override bool OnBackButtonPressed()

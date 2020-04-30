@@ -15,8 +15,7 @@ namespace CarbonHalt
 
             if (energy == 7000) 
             {
-                nextLabel.TextColor = Color.DimGray;
-                nextIcon.Source = "next.png";
+                finish.ImageSource = "finish2.png";
 
                 bigHouseBlur.IsVisible = false;
                 mediumHouseBlur.IsVisible = true;
@@ -25,8 +24,7 @@ namespace CarbonHalt
             }
             else if (energy == 4800)
             {
-                nextLabel.TextColor = Color.DimGray;
-                nextIcon.Source = "next.png";
+                finish.ImageSource = "finish2.png";
 
                 bigHouseBlur.IsVisible = true;
                 mediumHouseBlur.IsVisible = false;
@@ -35,8 +33,7 @@ namespace CarbonHalt
             }
             else if (energy ==  3000)
             {
-                nextLabel.TextColor = Color.DimGray;
-                nextIcon.Source = "next.png";
+                finish.ImageSource = "finish2.png";
 
                 bigHouseBlur.IsVisible = true;
                 mediumHouseBlur.IsVisible = true;
@@ -45,8 +42,7 @@ namespace CarbonHalt
             }
             else if (energy == 2000)
             {
-                nextLabel.TextColor = Color.DimGray;
-                nextIcon.Source = "next.png";
+                finish.ImageSource = "finish2.png";
 
                 bigHouseBlur.IsVisible = true;
                 mediumHouseBlur.IsVisible = true;
@@ -55,9 +51,10 @@ namespace CarbonHalt
             }
         }
 
-        async void OnNextClicked(object sender, EventArgs e)
+        async void OnFinishClicked(object sender, EventArgs e)
         {
             CO2EmissionCalculator.questionsDone = true;
+            App.Database.ClearHints();
             CO2EmissionCalculator.energyConsumption = energy;
 
             if (energy > 0)
@@ -80,8 +77,7 @@ namespace CarbonHalt
 
         protected void OnBigHouseClicked(object sender, EventArgs e) 
         {
-            nextLabel.TextColor = Color.DimGray;
-            nextIcon.Source = "next.png";
+            finish.ImageSource = "finish2.png";
 
             energy = 7000;
 
@@ -93,8 +89,7 @@ namespace CarbonHalt
 
         protected void OnMediumClicked(object sender, EventArgs e)
         {
-            nextLabel.TextColor = Color.DimGray;
-            nextIcon.Source = "next.png";
+            finish.ImageSource = "finish2.png";
 
             energy = 4800;
 
@@ -106,8 +101,7 @@ namespace CarbonHalt
 
         protected void OnSmallClicked(object sender, EventArgs e)
         {
-            nextLabel.TextColor = Color.DimGray;
-            nextIcon.Source = "next.png";
+            finish.ImageSource = "finish2.png";
 
             energy = 3000;
 
@@ -119,8 +113,7 @@ namespace CarbonHalt
 
         protected void OnDormClicked(object sender, EventArgs e)
         {
-            nextLabel.TextColor = Color.DimGray;
-            nextIcon.Source = "next.png";
+            finish.ImageSource = "finish2.png";
 
             energy = 2000;
 
