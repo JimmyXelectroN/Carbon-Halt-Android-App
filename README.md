@@ -30,9 +30,6 @@ Wilson, L. (n.d.). The carbon foodprint of 5 diets compared. Retrieved from http
 www.freevector.com
 <a href="https://www.freepik.com/free-photos-vectors/food">Food vector created by pch.vector - www.freepik.com</a>
 <a href="https://www.freepik.com/free-photos-vectors/banner">Banner vector created by macrovector - www.freepik.com</a>
-<a href="https://www.freepik.com/free-photos-vectors/people">People vector created by pch.vector - www.freepik.com</a>
-<a href="https://www.freepik.com/free-photos-vectors/people">People vector created by pch.vector - www.freepik.com</a>
-<a href="https://www.freepik.com/free-photos-vectors/city">City vector created by pch.vector - www.freepik.com</a>
 <a href="https://www.freepik.com/free-photos-vectors/people">People vector created by katemangostar - www.freepik.com</a>
 <a href="https://www.freepik.com/free-photos-vectors/background">Background vector created by pch.vector - www.freepik.com</a>
 <a href="https://www.freepik.com/free-photos-vectors/design">Design vector created by freepik - www.freepik.com</a>
@@ -50,11 +47,8 @@ www.freevector.com
 <a href="https://www.freepik.com/free-photos-vectors/water">Water vector created by freepik - www.freepik.com</a>
 <a href="https://www.freepik.com/free-photos-vectors/food">Food vector created by freepik - www.freepik.com</a>
 <a href="https://www.freepik.com/free-photos-vectors/food">Food vector created by macrovector_official - www.freepik.com</a>
-<a href="https://www.freepik.com/free-photos-vectors/food">Food vector created by pch.vector - www.freepik.com</a>
-<a href="https://www.freepik.com/free-photos-vectors/food">Food vector created by freepik - www.freepik.com</a>
 <a href="https://www.freepik.com/free-photos-vectors/background">Background vector created by freepik - www.freepik.com</a>
 <a href="https://www.freepik.com/free-photos-vectors/car">Car vector created by macrovector - www.freepik.com</a>
-<a href="https://www.freepik.com/free-photos-vectors/car">Car vector created by stories - www.freepik.com</a>
 <a href="https://www.freepik.com/free-photos-vectors/car">Car vector created by stories - www.freepik.com</a>
 <a href="https://www.freepik.com/free-photos-vectors/business">Business vector created by macrovector - www.freepik.com</a>
 <a href="https://www.freepik.com/free-photos-vectors/food">Food vector created by macrovector - www.freepik.com</a>
