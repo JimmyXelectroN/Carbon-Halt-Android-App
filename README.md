@@ -5,6 +5,8 @@ This app helps the user keep track of their carbon footprint. Made using C# and 
 
 ## References (If you make a change that requires citing, do so here)
 
+Barnard, M. (2018, August 10). Wind Energy's Carbon Footprint. Retrieved from https://www.factcheck.org/2018/03/wind-energys-carbon-footprint/
+
 Burkart, K. (2017, May 31). How much CO2 does one solar panel create? Retrieved from https://www.mnn.com/green-tech/research-innovations/blogs/how-much-co2-does-one-solar-panel-create
 
 Campbell, I. (2019, January). Carbon Independant. Retrieved from https://www.carbonindependent.org/index.html
