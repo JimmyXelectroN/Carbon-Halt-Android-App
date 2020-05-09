@@ -108,7 +108,7 @@ xmlns:radiobutton="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.B
                                         <RowDefinition Height="*"/>
                                     </Grid.RowDefinitions>
 
-                                    <Button BackgroundColor="Transparent" CornerRadius="10" BorderWidth="0" HeightRequest="20" Margin="116,0,116,10" Clicked="OnHintCheckClicked" ImageSource = "remove.png"/>
+                                    <Button BackgroundColor="Transparent" CornerRadius="10" BorderWidth="0" HeightRequest="20" Margin="116,0,116,0" Clicked="OnHintCheckClicked" ImageSource = "remove.png"/>
 
                                     <Label Grid.Row="1" Text="{Binding Hint}"  FontSize="13" HorizontalOptions="StartAndExpand" FontFamily="{StaticResource SofiaProLight}" HorizontalTextAlignment="Center"/>
 

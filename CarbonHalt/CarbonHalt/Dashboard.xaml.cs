@@ -1,6 +1,7 @@
 ﻿using CarbonHalt.Models;
 using System;
 using System.Linq;
+using Telerik.XamarinForms.PdfViewer;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -9,7 +10,6 @@ namespace CarbonHalt
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Dashboard : ContentPage
     {
-
         public Dashboard()
         {
             if (App.Database.hintIsEmpty())
