@@ -5,6 +5,8 @@ This app helps the user keep track of their carbon footprint. Made using C# and 
 
 ## References (If you make a change that requires citing, do so here)
 
+Barnard, M. (2018, August 10). Wind Energy's Carbon Footprint. Retrieved from https://www.factcheck.org/2018/03/wind-energys-carbon-footprint/
+
 Burkart, K. (2017, May 31). How much CO2 does one solar panel create? Retrieved from https://www.mnn.com/green-tech/research-innovations/blogs/how-much-co2-does-one-solar-panel-create
 
 Campbell, I. (2019, January). Carbon Independant. Retrieved from https://www.carbonindependent.org/index.html
@@ -30,9 +32,6 @@ Wilson, L. (n.d.). The carbon foodprint of 5 diets compared. Retrieved from http
 www.freevector.com
 <a href="https://www.freepik.com/free-photos-vectors/food">Food vector created by pch.vector - www.freepik.com</a>
 <a href="https://www.freepik.com/free-photos-vectors/banner">Banner vector created by macrovector - www.freepik.com</a>
-<a href="https://www.freepik.com/free-photos-vectors/people">People vector created by pch.vector - www.freepik.com</a>
-<a href="https://www.freepik.com/free-photos-vectors/people">People vector created by pch.vector - www.freepik.com</a>
-<a href="https://www.freepik.com/free-photos-vectors/city">City vector created by pch.vector - www.freepik.com</a>
 <a href="https://www.freepik.com/free-photos-vectors/people">People vector created by katemangostar - www.freepik.com</a>
 <a href="https://www.freepik.com/free-photos-vectors/background">Background vector created by pch.vector - www.freepik.com</a>
 <a href="https://www.freepik.com/free-photos-vectors/design">Design vector created by freepik - www.freepik.com</a>
@@ -44,4 +43,16 @@ www.freevector.com
 <a href="https://www.freepik.com/free-photos-vectors/house">House vector created by pch.vector - www.freepik.com</a>
 <a href="https://www.freepik.com/free-photos-vectors/tree">Tree vector created by pch.vector - www.freepik.com</a>
 <a href="https://www.freepik.com/free-photos-vectors/green">Green vector created by freepik - www.freepik.com</a>
+<a href="https://www.freepik.com/free-photos-vectors/technology">Technology vector created by stories - www.freepik.com</a>
+<a href="https://www.freepik.com/free-photos-vectors/business">Business vector created by freepik - www.freepik.com</a>
+<a href="https://www.freepik.com/free-photos-vectors/technology">Technology vector created by macrovector - www.freepik.com</a>
+<a href="https://www.freepik.com/free-photos-vectors/water">Water vector created by freepik - www.freepik.com</a>
+<a href="https://www.freepik.com/free-photos-vectors/food">Food vector created by freepik - www.freepik.com</a>
+<a href="https://www.freepik.com/free-photos-vectors/food">Food vector created by macrovector_official - www.freepik.com</a>
+<a href="https://www.freepik.com/free-photos-vectors/background">Background vector created by freepik - www.freepik.com</a>
+<a href="https://www.freepik.com/free-photos-vectors/car">Car vector created by macrovector - www.freepik.com</a>
+<a href="https://www.freepik.com/free-photos-vectors/car">Car vector created by stories - www.freepik.com</a>
+<a href="https://www.freepik.com/free-photos-vectors/business">Business vector created by macrovector - www.freepik.com</a>
+<a href="https://www.freepik.com/free-photos-vectors/food">Food vector created by macrovector - www.freepik.com</a>
+<a href="https://www.freepik.com/free-photos-vectors/background">Background vector created by macrovector - www.freepik.com</a>
 <a href="https://www.vecteezy.com/free-vector/solar-cell">Solar Cell Vectors by Vecteezy</a>
