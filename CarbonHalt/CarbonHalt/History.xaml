@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-xmlns:telerikChart="clr-namespace:Telerik.XamarinForms.Chart;assembly=Telerik.XamarinForms.Chart"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms" xmlns:radiobutton="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:radiobutton="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
              mc:Ignorable="d"
              x:Class="CarbonHalt.History"
              NavigationPage.HasNavigationBar="false">
@@ -24,7 +24,7 @@ xmlns:telerikChart="clr-namespace:Telerik.XamarinForms.Chart;assembly=Telerik.Xa
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell Appearing="CellAppearing">
-                            <Frame Margin="0,8,0,0" BackgroundColor="Gainsboro" CornerRadius="10" HeightRequest="30" Padding="3" x:Name="frame" HasShadow="False">
+                            <Frame Margin="0,8,0,0" CornerRadius="10" HeightRequest="30" Padding="3" x:Name="frame" HasShadow="False">
                                 <StackLayout Orientation="Horizontal" Spacing="20">
                                     <Label Text="{Binding TimeRecorded}" FontSize="14" TranslationX="10" TranslationY="4"/>
                                     <Label Text="{Binding Co2}" FontSize="14" TranslationY="4" TranslationX="172" />

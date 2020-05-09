@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -37,7 +32,7 @@ namespace CarbonHalt
             return true;
         }
 
-        async void OnValueChanged(object sender, ValueChangedEventArgs e)
+        protected void OnValueChanged(object sender, ValueChangedEventArgs e)
         {
             var newStep = Math.Round(e.NewValue / StepValue);
             people.Value = newStep * StepValue;

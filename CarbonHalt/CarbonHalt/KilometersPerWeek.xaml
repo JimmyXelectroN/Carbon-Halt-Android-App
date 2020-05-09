@@ -9,12 +9,12 @@
              NavigationPage.HasNavigationBar="false">
     <Grid RowSpacing="20">
         <Grid.RowDefinitions>
-            <RowDefinition Height="70"/>
-            <RowDefinition Height="300"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="270"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <StackLayout Padding="20" Spacing="-2">
+        <StackLayout Padding="20">
             <Label Text="Journey Distance" HorizontalOptions="Start" FontSize="30" TextColor="White" FontFamily="{StaticResource SofiaProMedium}"/>
             <Label Text="How many kilometers do you drive a week on private transport?" HorizontalOptions="Start" FontSize="14" TextColor="White" FontFamily="{StaticResource SofiaProMedium}"/>
         </StackLayout>
@@ -44,7 +44,7 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="100"/>
                     <ColumnDefinition Width="160"/>
-                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
                 <radiobutton:SfButton BackgroundColor="Transparent" BorderWidth="0" Clicked="OnBackClicked" ShowIcon="True">
@@ -56,7 +56,7 @@
                     </radiobutton:SfButton.Content>
                 </radiobutton:SfButton>
 
-                <radiobutton:SfButton Grid.Column="2" BackgroundColor="Transparent" BorderWidth="0" Clicked="OnNextClicked" ShowIcon="True">
+                <radiobutton:SfButton Grid.Column="2" BackgroundColor="Transparent" BorderWidth="0" Clicked="OnNextClicked" ShowIcon="True" HorizontalOptions="End">
                     <radiobutton:SfButton.Content>
                         <StackLayout Orientation="Horizontal" Spacing="2">
                             <Label Text="Next" FontSize="20"  TextColor="DimGray" FontFamily="{StaticResource SofiaProMedium}" VerticalOptions="Start"/>

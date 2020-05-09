@@ -21,7 +21,6 @@ namespace CarbonHalt
             var list = App.Database.GetEmissionLevels().Result;
             list.Reverse();
             listView.ItemsSource = new List<emissionLevel>(list);
-
         }
 
         private void CellAppearing(object sender, EventArgs e) 
@@ -32,6 +31,14 @@ namespace CarbonHalt
                 if (viewCell.View != null)
                 {
                     viewCell.View.BackgroundColor = Color.White;
+                }
+            }
+            else 
+            {
+                var viewCell = (ViewCell)sender;
+                if (viewCell.View != null)
+                {
+                    viewCell.View.BackgroundColor = Color.Gainsboro;
                 }
             }
 

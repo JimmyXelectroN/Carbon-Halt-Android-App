@@ -125,7 +125,7 @@ namespace CarbonHalt
             return true;
         }
 
-        async void OnVanClicked(object sender, EventArgs e)
+        protected void OnVanClicked(object sender, EventArgs e)
         {
             nextLabel.TextColor = Color.DimGray;
             nextIcon.Source = "next.png";
@@ -140,7 +140,7 @@ namespace CarbonHalt
             naturalBlur.IsVisible = true;
         }
 
-        async void OnSUVClicked(object sender, EventArgs e)
+        protected void OnSUVClicked(object sender, EventArgs e)
         {
             nextLabel.TextColor = Color.DimGray;
             nextIcon.Source = "next.png";
@@ -154,7 +154,7 @@ namespace CarbonHalt
             naturalBlur.IsVisible = true;
         }
 
-        async void OnSportscarClicked(object sender, EventArgs e)
+        protected void OnSportscarClicked(object sender, EventArgs e)
         {
             nextLabel.TextColor = Color.DimGray;
             nextIcon.Source = "next.png";
@@ -168,7 +168,7 @@ namespace CarbonHalt
             naturalBlur.IsVisible = true;
         }
 
-        async void OnSmallCarClicked(object sender, EventArgs e)
+        protected void OnSmallCarClicked(object sender, EventArgs e)
         {
             nextLabel.TextColor = Color.DimGray;
             nextIcon.Source = "next.png";
@@ -182,7 +182,7 @@ namespace CarbonHalt
             naturalBlur.IsVisible = true;
         }
 
-        async void OnMotorcycleClicked(object sender, EventArgs e)
+        protected void OnMotorcycleClicked(object sender, EventArgs e)
         {
             nextLabel.TextColor = Color.DimGray;
             nextIcon.Source = "next.png";
@@ -196,7 +196,7 @@ namespace CarbonHalt
             naturalBlur.IsVisible = true;
         }
 
-        async void OnNaturalClicked(object sender, EventArgs e)
+        protected void OnNaturalClicked(object sender, EventArgs e)
         {
             nextLabel.TextColor = Color.DimGray;
             nextIcon.Source = "next.png";

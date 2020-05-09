@@ -7,20 +7,20 @@
              mc:Ignorable="d"
              x:Class="CarbonHalt.Food"
              NavigationPage.HasNavigationBar="false">
-    <Grid RowSpacing="10">
+    <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="40"/>
-            <RowDefinition Height="190"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="150"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <StackLayout Padding="20" Spacing="-2">
+        <StackLayout Padding="20,20,20,15">
             <Label Text="Food" HorizontalOptions="Start" FontSize="30" TextColor="White" FontFamily="{StaticResource SofiaProMedium}"/>
             <Label Text="Which best describes your diet" HorizontalOptions="Start" FontSize="14" TextColor="White" FontFamily="{StaticResource SofiaProMedium}"/>
         </StackLayout>
-        <Image Grid.Row="1" Source="food.png" Aspect="AspectFit" Scale="0.78"/>
+        <Image Grid.Row="1" Source="food.png" Aspect="AspectFit" Margin="0,0,0,20" ScaleX="1.1"/>
         <Frame Grid.Row="2" CornerRadius="30" Padding="30">
-            <Grid RowSpacing="10">
+            <Grid RowSpacing="10" ColumnSpacing="10" HorizontalOptions="Center">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="45"/>
                     <ColumnDefinition Width="180"/>
@@ -37,7 +37,7 @@
                 <Frame CornerRadius="10" HasShadow="True" Padding="0">
                     <Image Source="steak.png" Aspect="AspectFill"/>
                 </Frame>
-                <Label Grid.Column="1" Text="Meat Lover" FontSize="16" HorizontalOptions="StartAndExpand" TranslationX="6" FontFamily="{StaticResource SofiaProMedium}" VerticalOptions="Center"/>
+                <Label Grid.Column="1" Text="Meat Lover" FontSize="16" HorizontalOptions="StartAndExpand" FontFamily="{StaticResource SofiaProMedium}" VerticalOptions="Center"/>
                 <radiobutton:SfButton Grid.Column="2" BackgroundColor="Transparent" BorderColor="Gray" CornerRadius="10" BorderWidth="1.5" x:Name="meatButton" Clicked="OnMeatLoverClicked" Margin="5">
                     <radiobutton:SfButton.Content>
                         <Image Source="check.png" Aspect="AspectFill" IsVisible="False" x:Name="meatCheck"/>
@@ -47,7 +47,7 @@
                 <Frame Grid.Row="1" CornerRadius="10" HasShadow="True" Padding="0">
                     <Image Source="burger.png" Aspect="AspectFill"/>
                 </Frame>
-                <Label Grid.Row="1" Grid.Column="1" Text="Average" FontSize="16" HorizontalOptions="StartAndExpand" TranslationX="6" FontFamily="{StaticResource SofiaProMedium}" VerticalOptions="Center"/>
+                <Label Grid.Row="1" Grid.Column="1" Text="Average" FontSize="16" HorizontalOptions="StartAndExpand" FontFamily="{StaticResource SofiaProMedium}" VerticalOptions="Center"/>
                 <radiobutton:SfButton Grid.Row="1" Text="" Grid.Column="2" BackgroundColor="Transparent" BorderColor="Gray" CornerRadius="10" BorderWidth="1.5" x:Name="averageButton" Clicked="OnAverageClicked" Margin="5">
                     <radiobutton:SfButton.Content>
                         <Image Source="check.png" Aspect="AspectFill" IsVisible="False"  x:Name="averageCheck"/>
@@ -57,7 +57,7 @@
                 <Frame Grid.Row="2" CornerRadius="10" HasShadow="True" Padding="0">
                     <Image Source="chicken.png" Aspect="AspectFill"/>
                 </Frame>
-                <Label Grid.Row="2" Grid.Column="1" Text="No Beef" FontSize="16" HorizontalOptions="StartAndExpand" TranslationX="6" FontFamily="{StaticResource SofiaProMedium}" VerticalOptions="Center"/>
+                <Label Grid.Row="2" Grid.Column="1" Text="No Beef" FontSize="16" HorizontalOptions="StartAndExpand" FontFamily="{StaticResource SofiaProMedium}" VerticalOptions="Center"/>
                 <radiobutton:SfButton Grid.Row="2" Text="" Grid.Column="2" BackgroundColor="Transparent" BorderColor="Gray" CornerRadius="10" BorderWidth="1.5" x:Name="noBeefButton" Clicked="OnNoBeefClicked" Margin="5">
                     <radiobutton:SfButton.Content>
                         <Image Source="check.png" Aspect="AspectFill" IsVisible="False" x:Name="noBeefCheck"/>
@@ -67,7 +67,7 @@
                 <Frame Grid.Row="3" CornerRadius="10" HasShadow="True" Padding="0">
                     <Image Source="egg.png" Aspect="AspectFill"/>
                 </Frame>
-                <Label Grid.Row="3" Grid.Column="1" Text="Vegetarian" FontSize="16" HorizontalOptions="StartAndExpand" TranslationX="6" FontFamily="{StaticResource SofiaProMedium}" VerticalOptions="Center"/>
+                <Label Grid.Row="3" Grid.Column="1" Text="Vegetarian" FontSize="16" HorizontalOptions="StartAndExpand" FontFamily="{StaticResource SofiaProMedium}" VerticalOptions="Center"/>
                 <radiobutton:SfButton Grid.Row="3" Text="" Grid.Column="2" BackgroundColor="Transparent" BorderColor="Gray" CornerRadius="10" BorderWidth="1.5" x:Name="vegetarianButton" Clicked="OnVegetarianClicked" Margin="5">
                     <radiobutton:SfButton.Content>
                         <Image Source="check.png" Aspect="AspectFill" IsVisible="False" x:Name="vegetarianCheck"/>
@@ -90,7 +90,7 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="100"/>
                     <ColumnDefinition Width="160"/>
-                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
                 <radiobutton:SfButton BackgroundColor="Transparent" BorderWidth="0" Clicked="OnBackClicked" ShowIcon="True">
@@ -102,7 +102,7 @@
                     </radiobutton:SfButton.Content>
                 </radiobutton:SfButton>
 
-                <radiobutton:SfButton Grid.Column="2" BackgroundColor="Transparent" BorderWidth="0" Clicked="OnNextClicked" ShowIcon="True">
+                <radiobutton:SfButton Grid.Column="2" BackgroundColor="Transparent" BorderWidth="0" Clicked="OnNextClicked" ShowIcon="True" HorizontalOptions="End">
                     <radiobutton:SfButton.Content>
                         <StackLayout Orientation="Horizontal" Spacing="2">
                             <Label Text="Next" FontSize="20"  TextColor="#D1D1D1" FontFamily="{StaticResource SofiaProMedium}" VerticalOptions="End" x:Name="nextLabel"/>

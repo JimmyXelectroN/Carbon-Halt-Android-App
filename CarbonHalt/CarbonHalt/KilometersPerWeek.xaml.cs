@@ -1,7 +1,6 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using CarbonHalt.Models;
 
 namespace CarbonHalt
 {
@@ -33,7 +32,7 @@ namespace CarbonHalt
             return true;
         }
 
-        async void OnValueChanged(object sender, EventArgs e) 
+        protected void OnValueChanged(object sender, EventArgs e) 
         {
             label.Text = "" + slider.Value;
         }

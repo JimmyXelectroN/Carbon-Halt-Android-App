@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -73,7 +68,7 @@ namespace CarbonHalt
             return true;
         }
 
-        async void OnSolarPanelsClicked(object sender, EventArgs e)
+        protected void OnSolarPanelsClicked(object sender, EventArgs e)
         {
             solarPanels = !solarPanels;
             if (solarPanels)
@@ -87,7 +82,7 @@ namespace CarbonHalt
             }
         }
 
-        async void OnSolarHeatingClicked(object sender, EventArgs e)
+        protected void OnSolarHeatingClicked(object sender, EventArgs e)
         {
             solarHeating = !solarHeating;
             if (solarHeating)
@@ -100,7 +95,7 @@ namespace CarbonHalt
             }
         }
 
-        async void OnHeatPumpClicked(object sender, EventArgs e)
+        protected void OnHeatPumpClicked(object sender, EventArgs e)
         {
             geoSystem = !geoSystem;
             if (geoSystem)
@@ -113,7 +108,7 @@ namespace CarbonHalt
             }
         }
 
-        async void OnWindClicked(object sender, EventArgs e)
+        protected void OnWindClicked(object sender, EventArgs e)
         {
             wind = !wind;
             if (wind)

@@ -8,18 +8,18 @@
              x:Class="CarbonHalt.House" 
              NavigationPage.HasNavigationBar="false">
 
-    <Grid RowSpacing="30">
+    <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="40"/>
-            <RowDefinition Height="230"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="220"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <StackLayout Padding="20">
-            <Label Text="House" HorizontalOptions="Start" FontSize="30" TextColor="White" FontFamily="{StaticResource SofiaProMedium}"/>
+            <Label Text="House" HorizontalOptions="Start" FontSize="30" TextColor="White" FontFamily="{StaticResource SofiaProMedium}" x:Name="l1"/>
             <Label Text="What type of residence do you live in?" HorizontalOptions="Start" FontSize="14" TextColor="White" FontFamily="{StaticResource SofiaProMedium}"/>
         </StackLayout>
-        <Image Grid.Row="1" Source="home.png" Aspect="AspectFit" ScaleX="1"  ScaleY="1"/>
+        <Image Grid.Row="1" Source="home.png" Aspect="AspectFit" Margin="0,0,0,50" Scale="1.4"/>
         <Frame Grid.Row="2" CornerRadius="30" Padding="25">
             <StackLayout Spacing="-25">
                 <Grid RowSpacing="0" ColumnSpacing="50" HorizontalOptions="Center" VerticalOptions="Center">
@@ -69,7 +69,7 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="100"/>
                     <ColumnDefinition Width="130"/>
-                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
                 <radiobutton:SfButton BackgroundColor="Transparent" BorderWidth="0" Clicked="OnBackClicked" ShowIcon="True">
@@ -81,7 +81,7 @@
                     </radiobutton:SfButton.Content>
                 </radiobutton:SfButton>
 
-                <radiobutton:SfButton Grid.Column="2" BackgroundColor="Transparent" BorderWidth="0" ShowIcon="True" ImageSource="finish.png" x:Name="finish" Clicked="OnFinishClicked" ImageAlignment="End"/>
+                <radiobutton:SfButton Grid.Column="2" BackgroundColor="Transparent" BorderWidth="0" ShowIcon="True" ImageSource="finish.png" x:Name="finish" Clicked="OnFinishClicked" ImageAlignment="End" HorizontalOptions="End"/>
                
             </Grid>
         </Frame>

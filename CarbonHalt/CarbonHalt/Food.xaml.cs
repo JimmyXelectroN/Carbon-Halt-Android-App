@@ -1,5 +1,4 @@
-﻿using CarbonHalt.Models;
-using System;
+﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -122,7 +121,7 @@ namespace CarbonHalt
             return true;
         }
 
-        async void OnMeatLoverClicked(object sender, EventArgs e) 
+        protected void OnMeatLoverClicked(object sender, EventArgs e) 
         {
             nextLabel.TextColor = Color.DimGray;
             nextIcon.Source = "next.png";
@@ -142,7 +141,7 @@ namespace CarbonHalt
             veganCheck.IsVisible = false;
         }
 
-        async void OnAverageClicked(object sender, EventArgs e)
+        protected void OnAverageClicked(object sender, EventArgs e)
         {
             nextLabel.TextColor = Color.DimGray;
             nextIcon.Source = "next.png";
@@ -162,7 +161,7 @@ namespace CarbonHalt
             veganCheck.IsVisible = false;
         }
 
-        async void OnNoBeefClicked(object sender, EventArgs e)
+        protected void OnNoBeefClicked(object sender, EventArgs e)
         {
             nextLabel.TextColor = Color.DimGray;
             nextIcon.Source = "next.png";
@@ -182,7 +181,7 @@ namespace CarbonHalt
             veganCheck.IsVisible = false;
         }
 
-        async void OnVegetarianClicked(object sender, EventArgs e)
+        protected void OnVegetarianClicked(object sender, EventArgs e)
         {
             nextLabel.TextColor = Color.DimGray;
             nextIcon.Source = "next.png";
@@ -202,7 +201,7 @@ namespace CarbonHalt
             veganCheck.IsVisible = false;
         }
 
-        async void OnVeganClicked(object sender, EventArgs e)
+        protected void OnVeganClicked(object sender, EventArgs e)
         {
             nextLabel.TextColor = Color.DimGray;
             nextIcon.Source = "next.png";

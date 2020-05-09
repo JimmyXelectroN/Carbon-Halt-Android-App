@@ -10,16 +10,18 @@
 
     <Grid RowSpacing="30">
         <Grid.RowDefinitions>
-            <RowDefinition Height="40"/>
-            <RowDefinition Height="220"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="240"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <StackLayout Padding="20" Spacing="-2">
+        <StackLayout Padding="20,20,20,-40">
             <Label Text="Fuel Type" HorizontalOptions="Start" FontSize="30" TextColor="White" FontFamily="{StaticResource SofiaProMedium}"/>
             <Label Text="Which type of fuel do you use?" HorizontalOptions="Start" FontSize="14" TextColor="White" FontFamily="{StaticResource SofiaProMedium}"/>
         </StackLayout>
-        <Image Grid.Row="1" Source="fuel.png" Aspect="AspectFit" ScaleX="1.3" ScaleY="1.8"/>
+        
+        <Image Grid.Row="1" Source="fuel.png" Aspect="AspectFit" ScaleX="0.9"/>
+        
         <Frame Grid.Row="2" CornerRadius="30" Padding="16">
             <StackLayout Padding="20" Spacing="15">
                 <radiobutton:SfButton Text="Diesel" BackgroundColor="Transparent" BorderColor="DimGray" BorderWidth="1" TextColor="DimGray" CornerRadius="20" HeightRequest="50" WidthRequest="300" FontFamily="{StaticResource SofiaProMedium}" Clicked="OnDieselClicked" x:Name="diesel"/>
@@ -27,12 +29,13 @@
                 <radiobutton:SfButton Text="Electricity" BackgroundColor="Transparent" BorderColor="DimGray" BorderWidth="1" TextColor="DimGray" CornerRadius="20" HeightRequest="50" WidthRequest="200" FontFamily="{StaticResource SofiaProMedium}" Clicked="OnElectricityClicked" x:Name="electricity"/>
             </StackLayout>
         </Frame>
+        
         <Frame Grid.Row="2" BorderColor="#DEDEDE" WidthRequest="600" Padding="14" VerticalOptions="EndAndExpand" Margin="-2">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="100"/>
                     <ColumnDefinition Width="160"/>
-                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
                 <radiobutton:SfButton BackgroundColor="Transparent" BorderWidth="0" Clicked="OnBackClicked" ShowIcon="True">
@@ -44,7 +47,7 @@
                     </radiobutton:SfButton.Content>
                 </radiobutton:SfButton>
 
-                <radiobutton:SfButton Grid.Column="2" BackgroundColor="Transparent" BorderWidth="0" Clicked="OnNextClicked" ShowIcon="True">
+                <radiobutton:SfButton Grid.Column="2" BackgroundColor="Transparent" BorderWidth="0" Clicked="OnNextClicked" ShowIcon="True" HorizontalOptions="End">
                     <radiobutton:SfButton.Content>
                         <StackLayout Orientation="Horizontal" Spacing="2">
                             <Label Text="Next" FontSize="20"  TextColor="#D1D1D1" FontFamily="{StaticResource SofiaProMedium}" VerticalOptions="End" x:Name="nextLabel"/>

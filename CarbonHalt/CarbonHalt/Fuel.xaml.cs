@@ -68,7 +68,7 @@ namespace CarbonHalt
             return true;
         }
 
-        async void OnDieselClicked(object sender, EventArgs e) 
+        protected void OnDieselClicked(object sender, EventArgs e) 
         {
             nextLabel.TextColor = Color.DimGray;
             nextIcon.Source = "next.png";
@@ -80,7 +80,7 @@ namespace CarbonHalt
             electricity.BackgroundColor = Color.Transparent;
         }
 
-        async void OnPetrolClicked(object sender, EventArgs e)
+        protected void OnPetrolClicked(object sender, EventArgs e)
         {
             nextLabel.TextColor = Color.DimGray;
             nextIcon.Source = "next.png";
@@ -92,7 +92,7 @@ namespace CarbonHalt
             electricity.BackgroundColor = Color.Transparent;
         }
 
-        async void OnElectricityClicked(object sender, EventArgs e)
+        protected void OnElectricityClicked(object sender, EventArgs e)
         {
             nextLabel.TextColor = Color.DimGray;
             nextIcon.Source = "next.png";

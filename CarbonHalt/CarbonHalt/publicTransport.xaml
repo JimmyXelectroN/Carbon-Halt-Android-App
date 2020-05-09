@@ -10,18 +10,18 @@
 
     <Grid RowSpacing="35">
         <Grid.RowDefinitions>
-            <RowDefinition Height="40"/>
-            <RowDefinition Height="140"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="120"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <StackLayout Padding="20" Spacing="0">
+        <StackLayout Padding="20,20,20,0">
             <Label Text="Public Transportation" HorizontalOptions="Start" FontSize="30" TextColor="White" FontFamily="{StaticResource SofiaProMedium}"/>
             <Label Text="What is your average weekly mileage on each of theses public transport systems?" HorizontalOptions="Start" FontSize="14" TextColor="White" FontFamily="{StaticResource SofiaProMedium}"/>
         </StackLayout>
-        <Image Grid.Row="1" Source="publicTransport.png" Aspect="AspectFill" ScaleX="0.92" ScaleY="0.75"/>
+        <Image Grid.Row="1" Source="publicTransport.png" Aspect="AspectFit"/>
         <Frame Grid.Row="2" CornerRadius="30" Padding="0">
-            <StackLayout Padding="30" Spacing="25" Margin="10,0,10,0">
+            <StackLayout Padding="30" Spacing="25" Margin="10,0,10,0" HorizontalOptions="Center">
 
                 <StackLayout Spacing="1">
                     <Label Text="Train" HorizontalOptions="Center" FontSize="18" TextColor="DimGray" FontFamily="{StaticResource SofiaProMedium}"/>
@@ -86,7 +86,7 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="100"/>
                     <ColumnDefinition Width="160"/>
-                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
                 <radiobutton:SfButton BackgroundColor="Transparent" BorderWidth="0" Clicked="OnBackClicked" ShowIcon="True">
@@ -98,7 +98,7 @@
                     </radiobutton:SfButton.Content>
                 </radiobutton:SfButton>
 
-                <radiobutton:SfButton Grid.Column="2" BackgroundColor="Transparent" BorderWidth="0" Clicked="OnNextClicked" ShowIcon="True">
+                <radiobutton:SfButton Grid.Column="2" BackgroundColor="Transparent" BorderWidth="0" Clicked="OnNextClicked" ShowIcon="True" HorizontalOptions="End">
                     <radiobutton:SfButton.Content>
                         <StackLayout Orientation="Horizontal" Spacing="2">
                             <Label Text="Next" FontSize="20"  TextColor="DimGray" FontFamily="{StaticResource SofiaProMedium}" VerticalOptions="Start"/>

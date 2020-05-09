@@ -9,19 +9,20 @@ xmlns:radiobutton="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.B
              NavigationPage.HasNavigationBar="false">
     <Grid RowSpacing="20">
         <Grid.RowDefinitions>
-            <RowDefinition Height="40"/>
-            <RowDefinition Height="240"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="190"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-
+     
         <StackLayout Padding="20">
             <Label Text="Journey Mode" HorizontalOptions="Start" FontSize="30" TextColor="White" FontFamily="{StaticResource SofiaProMedium}"/>
             <Label Text="What transportation vehicle do you mostly use" HorizontalOptions="Start" FontSize="14" TextColor="White" FontFamily="{StaticResource SofiaProMedium}"/>
         </StackLayout>
-        <Image Grid.Row="1" Source="journeyMode.png" Aspect="AspectFit" ScaleX="1"  ScaleY="1.1"/>
+        
+        <Image Grid.Row="1" Source="journeyMode.png" Aspect="AspectFit" ScaleX="0.95"/>
+
         <Frame Grid.Row="2" CornerRadius="30" Padding="25">
-            <StackLayout Spacing="-25">
-                <Grid RowSpacing="0" ColumnSpacing="30" HorizontalOptions="Center" VerticalOptions="Center" >
+            <Grid RowSpacing="0" ColumnSpacing="30" HorizontalOptions="Center">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="70"/>
                         <RowDefinition Height="30"/>
@@ -81,19 +82,18 @@ xmlns:radiobutton="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.B
                     </radiobutton:SfButton>
                     <Label Grid.Row="3" Grid.Column="2" Text="Walk/Bike" FontSize="12" TextColor="DimGray" FontFamily="{StaticResource SofiaProMedium}" HorizontalOptions="Center" VerticalOptions="Center"/>
                 </Grid>
-            </StackLayout>
         </Frame>
         <Frame  Grid.Row="2" BorderColor="#DEDEDE" WidthRequest="600" Padding="14" VerticalOptions="EndAndExpand" Margin="-2">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="100"/>
                     <ColumnDefinition Width="160"/>
-                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
                 <radiobutton:SfButton BackgroundColor="Transparent" BorderWidth="0" ShowIcon="True" ImageSource="exit.png" x:Name="exit" Clicked="OnExitClicked"/>
 
-                <radiobutton:SfButton Grid.Column="2" BackgroundColor="Transparent" BorderWidth="0" Clicked="OnNextClicked" ShowIcon="True">
+                <radiobutton:SfButton Grid.Column="2" BackgroundColor="Transparent" BorderWidth="0" Clicked="OnNextClicked" ShowIcon="True" HorizontalOptions="End">
                     <radiobutton:SfButton.Content>
                         <StackLayout Orientation="Horizontal" Spacing="2">
                             <Label Text="Next" FontSize="20"  TextColor="#D1D1D1" FontFamily="{StaticResource SofiaProMedium}" VerticalOptions="End" x:Name="nextLabel"/>

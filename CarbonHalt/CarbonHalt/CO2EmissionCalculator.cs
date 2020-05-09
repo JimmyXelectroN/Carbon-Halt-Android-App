@@ -189,6 +189,7 @@ namespace CarbonHalt
 
         private static double CalculateHouseholdEmissions() {
             double emissionAmount = 0;
+            double energyUsed = energyConsumption;
             double heatingEnergy = (energyConsumption / 0.22) - energyConsumption;
 
             if (geoSystem) {
@@ -202,24 +203,32 @@ namespace CarbonHalt
             // if you utilise green energy, only 75 percent of your total energy consumption produces co2
             if (green)
             {
-                energyConsumption = 0.75 * energyConsumption;
+                energyUsed = 0.75 * energyConsumption;
             }
 
             //
 
             // your personal emissions are calculated as an the result of the total households emissions divided by the number of people in the household
-            energyConsumption = ((energyConsumption + heatingEnergy)/52) / peopleInHousehold;
+            energyUsed = ((energyUsed + heatingEnergy)/52) / peopleInHousehold;
 
-            if (solar)
+            if (solar && wind)
             {
                 // co2 emission factor for solar is 0.05 kge /kWh
-                emissionAmount = energyConsumption * 0.05;
+                emissionAmount = energyUsed * 0.061;
+            }
+            else if (solar) 
+            {
+                emissionAmount = energyUsed * 0.05;
+            }
+            else if (wind)
+            {
+                emissionAmount = energyUsed * 0.011;
             }
             else
             {
 
                 // co2 emission factor is 0.309 kge /kWh
-                emissionAmount = energyConsumption * 0.309;
+                emissionAmount = energyUsed * 0.309;
             }
 
             return emissionAmount;
@@ -235,12 +244,12 @@ namespace CarbonHalt
                 await App.Database.SaveHintAsync(new hint
                 {
                     Hint = "Big cars usually consume more fuel that regular cars. Switching to a smaller vehicle will reduce you CO2 emissions by about 25%",
-                    Image = "toggle.jpg"
+                    Image = "bigCarHint.png"
                 });
                 await App.Database.SaveHintAsync(new hint
                 {
                     Hint = "Motorbikes emit nearly 50% less co2 than cars.",
-                    Image = "toggle.jpg"
+                    Image = "motorbikeHint.png"
                 });
             }
             else if (vehicleType == 2)
@@ -248,12 +257,12 @@ namespace CarbonHalt
                 await App.Database.SaveHintAsync(new hint
                 {
                     Hint = "SUVs are second only to the energy industry as the leading causes of global warming. Switching out your SUV for a more environmentally friendly one goes a long way.",
-                    Image = "toggle.jpg"
+                    Image = "suvHint.png"
                 });
                 await App.Database.SaveHintAsync(new hint
                 {
                     Hint = "Motorbikes emit nearly 50% less co2 than cars.",
-                    Image = "toggle.jpg"
+                    Image = "motorbikeHint.png"
                 });
             }
             else if (vehicleType == 3)
@@ -261,12 +270,12 @@ namespace CarbonHalt
                 await App.Database.SaveHintAsync(new hint
                 {
                     Hint = "If not electric, your sportscar's powerful engine uses up more fuel (resulting in a greater carbon footprint) than any other type of car. Switching it out for a car that has a good fuel economy will greatly help in the fight against global warming, by reducing emissions by over 50% per kilometer.",
-                    Image = "toggle.jpg"
+                    Image = "sportcarHint.png"
                 });
                 await App.Database.SaveHintAsync(new hint
                 {
                     Hint = "Motorbikes emit nearly 50% less co2 than cars.",
-                    Image = "toggle.jpg"
+                    Image = "motorbikeHint.png"
                 });
             }
             else if (vehicleType == 4)
@@ -274,7 +283,7 @@ namespace CarbonHalt
                 await App.Database.SaveHintAsync(new hint
                 {
                     Hint = "Motorbikes emit nearly 50% less co2 than cars.",
-                    Image = "toggle.jpg"
+                    Image = "motorbikeHint.png"
                 });
             }
 
@@ -284,7 +293,7 @@ namespace CarbonHalt
                 await App.Database.SaveHintAsync(new hint
                 {
                     Hint = "Fossil fuel powered cars are one of the major contributors to co2 emissions. Going electric would be a smart choice in slasshing your co2 emissions.",
-                    Image = "toggle.jpg"
+                    Image = "electricCarHint.png"
                 });
             }
             else if (fuelType == 2)
@@ -292,21 +301,13 @@ namespace CarbonHalt
                 await App.Database.SaveHintAsync(new hint
                 {
                     Hint = "Diesel fuels are \"lean-burn\", meaning they use less fuel and air to get the same amount of performance as a petrol engine. So although diesel fuel contains more co2, overall the emissions of a diesel car tend to be lower by about 10%.",
-                    Image = "toggle.jpg"
+                    Image = "petrolHint.png"
                 });
 
                 await App.Database.SaveHintAsync(new hint
                 {
                     Hint = "Fossil fuel powered cars are one of the major contributors to co2 emissions. Going electric would be a smart choice in slasshing your co2 emissions.",
-                    Image = "toggle.jpg"
-                });
-            }
-            else if (fuelType == 2)
-            {
-                await App.Database.SaveHintAsync(new hint
-                {
-                    Hint = "Great! Have an electric car is a sure way of doing your part when it comes to climate change. However, don't forget that your car runs on electricity that is mostly generated by fossil fuel power plants.",
-                    Image = "toggle.jpg"
+                    Image = "electricCarHint.png"
                 });
             }
 
@@ -316,7 +317,7 @@ namespace CarbonHalt
                 await App.Database.SaveHintAsync(new hint
                 {
                     Hint = "Driving less with private transportation and using more public transport will have a noticeable impact on your carbon footprint",
-                    Image = "toggle.jpg"
+                    Image = "publicTransportHint.png"
                 });
             }
 
@@ -325,8 +326,8 @@ namespace CarbonHalt
             {
                 await App.Database.SaveHintAsync(new hint
                 {
-                    Hint = "Although using more of publictransport is a good way of cutting your individual carbon footprint, some public transportation is better than others. Buses fall at the bottom of the list for good public transport. If your region has a metro system, use it.",
-                    Image = "toggle.jpg"
+                    Hint = "Although using more of public transport is a good way of cutting your individual carbon footprint, some public transportation is better than others. Buses fall at the bottom of the list for good public transport. If your region has a metro system, use it.",
+                    Image = "busHint.jpg"
                 });
             }
 
@@ -336,7 +337,7 @@ namespace CarbonHalt
                 await App.Database.SaveHintAsync(new hint
                 {
                     Hint = "Airplane transport contributes about 250kg of co2 to your carbon footprint per hour flying. Travelling cross-country or continental? An a great alternative is a train, which cuts your co2 emissions by over 85%.",
-                    Image = "toggle.jpg"
+                    Image = "planeHint.jpg"
                 });
             }
 
@@ -346,22 +347,22 @@ namespace CarbonHalt
                 await App.Database.SaveHintAsync(new hint
                 {
                     Hint = "Meat production, especially red meat, is very carbon intensive. So cutting back on the the amount of red meat you eat helps reduce your footprint.",
-                    Image = "toggle.jpg"
+                    Image = "meatHint.png"
                 });
                 await App.Database.SaveHintAsync(new hint
                 {
                     Hint = "A vegetarian's carbon footprint from food is two thirds that of an average person's. This is even lower for vegans.",
-                    Image = "toggle.jpg"
+                    Image = "vegetarian.jpg"
                 });
                 await App.Database.SaveHintAsync(new hint
                 {
                     Hint = "Dairy production is is very carbon intensive. Cutting back on the dairy has the benefits of reducing your footprint.",
-                    Image = "toggle.jpg"
+                    Image = "dairyHint.jpg"
                 });
                 await App.Database.SaveHintAsync(new hint
                 {
                     Hint = "Swapping out beef for chicken cuts off about a quarter of emissions",
-                    Image = "toggle.jpg"
+                    Image = "chickenHint.png"
                 });
             }
             else if (dietType == 2)
@@ -369,22 +370,22 @@ namespace CarbonHalt
                 await App.Database.SaveHintAsync(new hint
                 {
                     Hint = "Meat production, especially red meat, is very carbon intensive. So cutting back on the the amount of red meat you eat helps reduce your footprint.",
-                    Image = "toggle.jpg"
+                    Image = "meatHint.png"
                 });
                 await App.Database.SaveHintAsync(new hint
                 {
                     Hint = "A vegetarian's carbon footprint from food is two thirds that of an average person's. This is even lower for vegans.",
-                    Image = "toggle.jpg"
+                    Image = "vegetarian.jpg"
                 });
                 await App.Database.SaveHintAsync(new hint
                 {
                     Hint = "Dairy production is is very carbon intensive. Cutting back on the dairy has the benefits of reducing your footprint.",
-                    Image = "toggle.jpg"
+                    Image = "dairyHint.jpg"
                 });
                 await App.Database.SaveHintAsync(new hint
                 {
                     Hint = "Swapping out beef for chicken cuts off about a quarter of emissions",
-                    Image = "toggle.jpg"
+                    Image = "chickenHint.png"
                 });
             }
             else if (dietType == 3)
@@ -392,12 +393,12 @@ namespace CarbonHalt
                 await App.Database.SaveHintAsync(new hint
                 {
                     Hint = "A vegetarian's carbon footprint from food is two thirds that of an average person's. This is even lower for vegans.",
-                    Image = "toggle.jpg"
+                    Image = "vegetarian.jpg"
                 });
                 await App.Database.SaveHintAsync(new hint
                 {
                     Hint = "Dairy production is is very carbon intensive. Cutting back on the dairy has the benefits of reducing your footprint.",
-                    Image = "toggle.jpg"
+                    Image = "dairyHint.jpg"
                 });
             }
             else if (dietType == 4)
@@ -405,7 +406,7 @@ namespace CarbonHalt
                 await App.Database.SaveHintAsync(new hint
                 {
                     Hint = "A vegetarian diet is great for a low carbon footprint. However, dairy production is is very carbon intensive. Cutting back on the dairy has the benefits of reducing your footprint.",
-                    Image = "toggle.jpg"
+                    Image = "dairyHint.jpg"
                 });
             }
             else if (dietType == 5)
@@ -413,7 +414,7 @@ namespace CarbonHalt
                 await App.Database.SaveHintAsync(new hint
                 {
                     Hint = "A vegan diet is great for keeping your carbon footprint low! ",
-                    Image = "toggle.jpg"
+                    Image = "fruitHint.png"
                 });
             }
 
@@ -423,7 +424,7 @@ namespace CarbonHalt
                 await App.Database.SaveHintAsync(new hint
                 {
                     Hint = "Getting a green tariff reduces carbon emissions caused by home electricity usage by about 25%.",
-                    Image = "toggle.jpg"
+                    Image = "greenHint.png"
                 });
             }
 
@@ -432,8 +433,8 @@ namespace CarbonHalt
             {
                 await App.Database.SaveHintAsync(new hint
                 {
-                    Hint = "Installing and powering your hous via solar panels will directly reduce your carbon footprint by over 85%. Following this up with a tesla battery can help you go completely off the grid",
-                    Image = "toggle.jpg"
+                    Hint = "Installing and powering your house via solar panels will directly reduce your carbon footprint by over 85%. Following this up with a tesla battery can help you go completely off the grid",
+                    Image = "solarHint.png"
                 });
             }
 
@@ -442,7 +443,7 @@ namespace CarbonHalt
                 await App.Database.SaveHintAsync(new hint
                 {
                     Hint = "Heating counts up to about 78% of your home electricity usage. So its no suprise that switching to a renewable source for your water and general heat will greatly slash your carbon footprint.",
-                    Image = "toggle.jpg"
+                    Image = "heatingHint.png"
                 });
             }
 
@@ -451,7 +452,7 @@ namespace CarbonHalt
                 await App.Database.SaveHintAsync(new hint
                 {
                     Hint = "Installing a residential wind turbine will greatly help in cutting carbon footprint.",
-                    Image = "toggle.jpg"
+                    Image = "wind.jpg"
                 });
             }
         }

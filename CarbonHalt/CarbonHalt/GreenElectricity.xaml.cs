@@ -1,7 +1,6 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using CarbonHalt.Models;
 
 namespace CarbonHalt
 {
@@ -36,7 +35,7 @@ namespace CarbonHalt
             return true;
         }
 
-        async void OnYesClicked(object sender, EventArgs e)
+        protected void OnYesClicked(object sender, EventArgs e)
         {
             nextLabel.TextColor = Color.DimGray;
             nextIcon.Source = "next.png";
@@ -47,7 +46,7 @@ namespace CarbonHalt
             no.BackgroundColor = Color.Transparent;
         }
 
-        async void OnNoClicked(object sender, EventArgs e)
+        protected void OnNoClicked(object sender, EventArgs e)
         {
             nextLabel.TextColor = Color.DimGray;
             nextIcon.Source = "next.png";

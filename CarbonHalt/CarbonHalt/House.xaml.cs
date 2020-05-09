@@ -10,8 +10,9 @@ namespace CarbonHalt
         private double energy;
         public House()
         {
-            InitializeComponent();
             energy = CO2EmissionCalculator.energyConsumption;
+            InitializeComponent();
+
 
             if (energy == 7000) 
             {

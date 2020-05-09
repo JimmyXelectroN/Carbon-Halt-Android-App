@@ -1,7 +1,6 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using CarbonHalt.Models;
 
 namespace CarbonHalt
 {
@@ -38,17 +37,17 @@ namespace CarbonHalt
             return true;
         }
 
-        async void OnTrainChanged(object sender, EventArgs e)
+        protected void OnTrainChanged(object sender, EventArgs e)
         {
             label.Text = "" + train.Value;
         }
 
-        async void OnMetroChanged(object sender, EventArgs e)
+        protected void OnMetroChanged(object sender, EventArgs e)
         {
             label2.Text = "" + metro.Value;
         }
 
-        async void OnBusChanged(object sender, EventArgs e)
+        protected void OnBusChanged(object sender, EventArgs e)
         {
             labe3.Text = "" + bus.Value;
         }
