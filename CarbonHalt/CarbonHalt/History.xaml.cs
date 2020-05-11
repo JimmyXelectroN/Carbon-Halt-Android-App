@@ -15,7 +15,7 @@ namespace CarbonHalt
             InitializeComponent();
         }
 
-        protected override async void OnAppearing()
+        protected override void OnAppearing()
         {
             base.OnAppearing();
             var list = App.Database.GetEmissionLevels().Result;
