@@ -55,4 +55,5 @@ www.freevector.com
 <a href="https://www.freepik.com/free-photos-vectors/business">Business vector created by macrovector - www.freepik.com</a>
 <a href="https://www.freepik.com/free-photos-vectors/food">Food vector created by macrovector - www.freepik.com</a>
 <a href="https://www.freepik.com/free-photos-vectors/background">Background vector created by macrovector - www.freepik.com</a>
+<a href="https://www.freepik.com/free-photos-vectors/people">People vector created by freepik - www.freepik.com</a>
 <a href="https://www.vecteezy.com/free-vector/solar-cell">Solar Cell Vectors by Vecteezy</a>
