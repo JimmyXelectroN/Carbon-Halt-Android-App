@@ -1,12 +1,29 @@
 # Carbon Halt Android App
+![alt text](https://github.com/JimmyXelectroN/Carbon-Halt-Android-App/blob/master/Preview/feature.png) 
 This app helps the user keep track of their carbon footprint. Made using C# and Xamarin. Synfusion UI controls have also been used.
 
 **(Feel free to contribute to this project as there is lots to improve. For one if we can get better estimations for the calculator, that would be great. Create a branch and add features that you think will be useful. All and any help is welcome and wanted.)**
+
+## Overview
+
+*"What we achieve inwardly will change outer reality." - Plutarch*
+
+The first step to solving our global climate change problem starts with you the individual. Working to reduce your own carbon footprint will greatly help the fight against climate change. There are many aspects of your lifestyle that can be contributing to your carbon footprint. The type of car you drive affects your carbon footprint, as well as the type of fuel you use. Air travel is also another large contributor to your carbon footprint. Even the type of diet you have has an impact on your carbon footprint! 
+
+The Carbon Halt app helps you find out just how much of an impact you as an individual have on the global climate change problem by calculating your footprint. It also gives you informative tips on how to reduce your carbon footprint. The app also keeps track of your carbon footprint as you evaluate it. This is helpful to see how you are doing in reducing your carbon footprint. 
+
+The Carbon Halt app is a straightforward tool that can be used to determine one's carbon footprint: 
+- Download the app and answer the questions on your lifestyle. 
+- Reviewing your carbon footprint and read tips in your dashboard 
+- When you think you have made changes to your lifestyle that have reduced your carbon footprint, hit the "Evaluate" button to retest yourself to see how your carbon footprint has either improved or worsened 
+- Check your history for long term changes in your carbon footprint 
+
+Let us all work together to reduce the impact we have on the earth!
+
 1 | 2 | 3 | 4 | 5 
 --- | --- | --- | --- | --- 
 ![alt text](https://github.com/JimmyXelectroN/Carbon-Halt-Android-App/blob/master/Preview/1.jpg) |   ![alt text](https://github.com/JimmyXelectroN/Carbon-Halt-Android-App/blob/master/Preview/2.jpg) |   ![alt text](https://github.com/JimmyXelectroN/Carbon-Halt-Android-App/blob/master/Preview/3.jpg) |   ![alt text](https://github.com/JimmyXelectroN/Carbon-Halt-Android-App/blob/master/Preview/4.jpg) |   ![alt text](https://github.com/JimmyXelectroN/Carbon-Halt-Android-App/blob/master/Preview/5.jpg) 
 
-![alt text](https://github.com/JimmyXelectroN/Carbon-Halt-Android-App/blob/master/Preview/feature.png) 
 ## References (If you make a change that requires citing, do so here)
 
 Barnard, M. (2018, August 10). Wind Energy's Carbon Footprint. Retrieved from https://www.factcheck.org/2018/03/wind-energys-carbon-footprint/
