@@ -6,7 +6,7 @@ This app helps the user keep track of their carbon footprint. Made using C# and 
 
 ## Overview
 
-*"What we achieve inwardly will change outer reality." - Plutarch*
+#### *"What we achieve inwardly will change outer reality." - Plutarch*
 
 The first step to solving our global climate change problem starts with you the individual. Working to reduce your own carbon footprint will greatly help the fight against climate change. There are many aspects of your lifestyle that can be contributing to your carbon footprint. The type of car you drive affects your carbon footprint, as well as the type of fuel you use. Air travel is also another large contributor to your carbon footprint. Even the type of diet you have has an impact on your carbon footprint! 
 
