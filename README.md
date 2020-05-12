@@ -2,9 +2,11 @@
 This app helps the user keep track of their carbon footprint. Made using C# and Xamarin. Synfusion UI controls have also been used.
 
 **(Feel free to contribute to this project as there is lots to improve. For one if we can get better estimations for the calculator, that would be great. Create a branch and add features that you think will be useful. All and any help is welcome and wanted.)**
-1 | 2 | 3 | 4 | 5 | 6 
---- | --- | --- | --- | --- | --- 
+1 | 2 | 3 | 4 | 5 
+--- | --- | --- | --- | --- 
 ![alt text](https://github.com/JimmyXelectroN/Carbon-Halt-Android-App/blob/master/Preview/1.jpg) |   ![alt text](https://github.com/JimmyXelectroN/Carbon-Halt-Android-App/blob/master/Preview/2.jpg) |   ![alt text](https://github.com/JimmyXelectroN/Carbon-Halt-Android-App/blob/master/Preview/3.jpg) |   ![alt text](https://github.com/JimmyXelectroN/Carbon-Halt-Android-App/blob/master/Preview/4.jpg) |   ![alt text](https://github.com/JimmyXelectroN/Carbon-Halt-Android-App/blob/master/Preview/5.jpg) 
+
+![alt text](https://github.com/JimmyXelectroN/Carbon-Halt-Android-App/blob/master/Preview/feature.png) 
 ## References (If you make a change that requires citing, do so here)
 
 Barnard, M. (2018, August 10). Wind Energy's Carbon Footprint. Retrieved from https://www.factcheck.org/2018/03/wind-energys-carbon-footprint/
