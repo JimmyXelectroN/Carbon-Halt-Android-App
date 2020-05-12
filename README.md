@@ -2,7 +2,7 @@
 This app helps the user keep track of their carbon footprint. Made using C# and Xamarin. Synfusion UI controls have also been used.
 
 **(Feel free to contribute to this project as there is lots to improve. For one if we can get better estimations for the calculator, that would be great. Create a branch and add features that you think will be useful. All and any help is welcome and wanted.)**
- |
+                           |  
 :-------------------------:|:-------------------------:
 ![alt text](https://github.com/JimmyXelectroN/Carbon-Halt-Android-App/blob/master/Preview/1.jpg) |   ![alt text](https://github.com/JimmyXelectroN/Carbon-Halt-Android-App/blob/master/Preview/2.jpg)
 ## References (If you make a change that requires citing, do so here)
