@@ -49,8 +49,8 @@ Wilson, L. (n.d.). The carbon foodprint of 5 diets compared. Retrieved from http
 
 ### Images and Icons Attribution (Attribute any image and icon additions)
 
-- <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-www.freevector.com
+<div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+- www.freevector.com
 - <a href="https://www.freepik.com/free-photos-vectors/food">Food vector created by pch.vector - www.freepik.com</a>
 - <a href="https://www.freepik.com/free-photos-vectors/banner">Banner vector created by macrovector - www.freepik.com</a>
 - <a href="https://www.freepik.com/free-photos-vectors/people">People vector created by katemangostar - www.freepik.com</a>
